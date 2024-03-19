@@ -5,13 +5,62 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 
-function MultipleItems() {
+interface ProductList {
+  src: string;
+  alt: string;
+}
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "flex",
+        background: "#ccc",
+        width: "40px",
+        height: "40px",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: "50%",
+        color: "black",
+      }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "flex",
+        background: "#ccc",
+        width: "40px",
+        height: "40px",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: "50%",
+        color: "black",
+      }}
+      onClick={onClick}
+    />
+  );
+}
+
+function MultipleItems({ ProductList }: { ProductList: ProductList[] }) {
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -42,56 +91,20 @@ function MultipleItems() {
   return (
     <div className="slider-container">
       <Slider {...settings}>
-        <div>
-          <div className="cursor-pointer h-[300px] relative transition hover:bg-[rgba(0,0,0,0.1)]">
-            <Image
-              alt={"laptop"}
-              src={"/product1.png"}
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
-        </div>
-        <div>
-          <div className="cursor-pointer h-[300px] relative transition hover:bg-[rgba(0,0,0,0.1)]">
-            <Image
-              alt={"laptop"}
-              src={"/product6.png"}
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
-        </div>
-        <div>
-          <div className="cursor-pointer h-[300px] relative transition hover:bg-[rgba(0,0,0,0.1)]">
-            <Image
-              alt={"laptop"}
-              src={"/product1.png"}
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
-        </div>
-        <div>
-          <div className="cursor-pointer h-[300px] relative transition hover:bg-[rgba(0,0,0,0.1)]">
-            <Image
-              alt={"laptop"}
-              src={"/product6.png"}
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
-        </div>
-        <div>
-          <div className="cursor-pointer h-[300px] relative transition hover:bg-[rgba(0,0,0,0.1)]">
-            <Image
-              alt={"laptop"}
-              src={"/product1.png"}
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
-        </div>
+        {ProductList?.map((productItem, key) => {
+          return (
+            <div key={key}>
+              <div className="cursor-pointer h-[300px] relative transition hover:bg-[rgba(0,0,0,0.1)]">
+                <Image
+                  alt={productItem.alt}
+                  src={productItem.src}
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+            </div>
+          );
+        })}
       </Slider>
     </div>
   );
