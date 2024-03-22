@@ -2,18 +2,20 @@ import "./global.css";
 import ProviderComponent from "@/store/ProviderComponnt";
 import Navbar from "@/components/navbar/navbar";
 
-export default function RootLayout({
+export default function LocaleLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        <Navbar />
-        <ProviderComponent>{children}</ProviderComponent>
+    <html lang={"en"}>
+      <body className="bg-white">
+        <ProviderComponent>
+          <Navbar />
+          {children}
+        </ProviderComponent>
 
-        <footer className="bg-whit">
+        <footer className="bg-white">
           <div className="container mx-auto w-full p-4 py-6 lg:py-8">
             <div className="md:flex md:justify-between">
               <div className="mb-6 md:mb-0">

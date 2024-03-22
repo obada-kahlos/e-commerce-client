@@ -6,8 +6,13 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 
 interface ProductList {
-  src: string;
-  alt: string;
+  description?: string;
+  discount?: string;
+  id?: string;
+  images?: string;
+  name?: string;
+  price?: string;
+  type?: string;
 }
 
 function SampleNextArrow(props) {
@@ -57,7 +62,7 @@ function MultipleItems({ ProductList }: { ProductList: ProductList[] }) {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -88,6 +93,7 @@ function MultipleItems({ ProductList }: { ProductList: ProductList[] }) {
       },
     ],
   };
+
   return (
     <div className="slider-container">
       <Slider {...settings}>
@@ -95,12 +101,22 @@ function MultipleItems({ ProductList }: { ProductList: ProductList[] }) {
           return (
             <div key={key}>
               <div className="cursor-pointer h-[300px] relative transition hover:bg-[rgba(0,0,0,0.1)]">
-                <Image
-                  alt={productItem.alt}
-                  src={productItem.src}
+                <img
+                  alt={productItem.name ? productItem.name : ""}
+                  src={productItem.images ? productItem.images : ""}
+                />
+                {/* <Image
+                  alt={productItem.name ? productItem.name : ""}
+                  src={productItem.images ? productItem.images : ""}
                   layout="fill"
                   objectFit="contain"
-                />
+                /> */}
+                {productItem.description}
+                {productItem.discount}
+                {productItem.id}
+                {productItem.price}
+                {productItem.type}
+                {productItem.name}
               </div>
             </div>
           );

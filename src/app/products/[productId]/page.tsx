@@ -1,9 +1,10 @@
 import React from "react";
+import ProductById from "./product-by-id";
 
 export default function ProductsId({
   params,
 }: {
   params: { productId: string };
 }) {
-  return <div>ProductsId {params.productId} </div>;
+  return <div className="sm:container sm:w-full w-[90%] mx-auto md:my-36 my-8"> <ProductById id={params.productId}/> </div>;
 }

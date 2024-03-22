@@ -1,10 +1,14 @@
 import { apiSlice } from "@/data-access/api/api";
+import { laptopList } from "@/data-access/slices/product-list";
+import { accessoryList } from "@/data-access/slices/Accessory-list"
 
 import { configureStore } from "@reduxjs/toolkit";
 
 export const store = configureStore({
   reducer: {
-    [apiSlice.reducerPath]: apiSlice.reducer
+    [apiSlice.reducerPath]: apiSlice.reducer,
+    laptopList,
+    accessoryList
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiSlice.middleware),

@@ -1,97 +1,35 @@
 import Card from "@/components/card/card";
 import MultipleItems from "@/components/react-slick/react-slick";
 import React from "react";
+import { LaptopList } from "@/feature/laptop-list";
+import { AccessoryList } from "@/feature/Accessory-list";
 
 const products = {
   product1: {
     image: "/product1.png",
-    title: "Product1",
-    price: "1000S.P",
+    title: "Gaming Laptop",
   },
   product2: {
     image: "/product2.png",
-    title: "Product2",
-    price: "1000S.P",
+    title: "Accessory",
   },
   product3: {
     image: "/product3.png",
-    title: "Product3",
-    price: "1000S.P",
+    title: "Bags",
   },
   product4: {
     image: "/product4.png",
-    title: "Product4",
-    price: "1000S.P",
+    title: "Batteries",
   },
   product5: {
     image: "/product5.png",
-    title: "Product5",
-    price: "1000S.P",
+    title: "Head phone",
   },
   product6: {
     image: "/product6.png",
-    title: "Product6",
-    price: "1000S.P",
+    title: "Desktop laptop",
   },
 };
-
-const laptopList = [
-  {
-    src: "/product1.png",
-    alt: "Laptop",
-  },
-  {
-    src: "/product6.png",
-    alt: "Laptop",
-  },
-  {
-    src: "/product7.png",
-    alt: "Laptop",
-  },
-  {
-    src: "/product6.png",
-    alt: "Laptop",
-  },
-  {
-    src: "/product1.png",
-    alt: "Laptop",
-  },
-  {
-    src: "/product7.png",
-    alt: "Laptop",
-  },
-  {
-    src: "/product1.png",
-    alt: "Laptop",
-  },
-];
-
-const laptopAccessoryList = [
-  {
-    src: "/product2.png",
-    alt: "Laptop",
-  },
-  {
-    src: "/product3.png",
-    alt: "Laptop",
-  },
-  {
-    src: "/product4.png",
-    alt: "Laptop",
-  },
-  {
-    src: "/product2.png",
-    alt: "Laptop",
-  },
-  {
-    src: "/product3.png",
-    alt: "Laptop",
-  },
-  {
-    src: "/product4.png",
-    alt: "Laptop",
-  },
-];
 
 export const metadata = {
   title: "Products website",
@@ -101,6 +39,12 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="sm:container sm:w-full w-[90%] mx-auto my-16 ">
+      <div className="my-[10px]">
+        <h2 className="text-[34px] text-[#2a2a2a] font-[7000]"> Categories </h2>
+        <span className="text-[14px] text-[#a1a1a1] font-[400] ">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, cum!
+        </span>
+      </div>
       <div className="grid grid-cols-12 gap-4">
         <div className="md:col-span-6 col-span-12">
           <div className="grid grid-cols-12 gap-4">
@@ -111,7 +55,7 @@ export default function Home() {
                 width="100%"
                 image={products.product1.image}
                 title={products.product1.title}
-                price={products.product1.price}
+                price={""}
               />
             </div>
             <div className="col-span-12">
@@ -121,7 +65,7 @@ export default function Home() {
                 width="100%"
                 image={products.product6.image}
                 title={products.product6.title}
-                price={products.product6.price}
+                price={""}
               />
             </div>
           </div>
@@ -135,7 +79,7 @@ export default function Home() {
                 width="100%"
                 image={products.product2.image}
                 title={products.product2.title}
-                price={products.product2.price}
+                price={""}
               />
             </div>
             <div className="md:col-span-6 col-span-12">
@@ -145,7 +89,7 @@ export default function Home() {
                 width="100%"
                 image={products.product3.image}
                 title={products.product3.title}
-                price={products.product3.price}
+                price={""}
               />
             </div>
             <div className="md:col-span-6 col-span-12">
@@ -155,7 +99,7 @@ export default function Home() {
                 width="100%"
                 image={products.product4.image}
                 title={products.product4.title}
-                price={products.product4.price}
+                price={""}
               />
             </div>
             <div className="md:col-span-6 col-span-12">
@@ -165,39 +109,15 @@ export default function Home() {
                 width="100%"
                 image={products.product5.image}
                 title={products.product5.title}
-                price={products.product5.price}
+                price={""}
               />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto my-[40px]">
-        <div className="my-[10px]">
-          <h2 className="text-[34px] text-[#2a2a2a] font-[7000]"> Laptop </h2>
-          <span className="text-[14px] text-[#a1a1a1] font-[400] ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, cum!
-          </span>
-        </div>
-        <div className="my-[40px]">
-          <MultipleItems ProductList={laptopList} />
-        </div>
-      </div>
-
-      <div className="container mx-auto my-[40px]">
-        <div className="my-[10px]">
-          <h2 className="text-[34px] text-[#2a2a2a] font-[7000]">
-            Laptop accessory
-          </h2>
-          <span className="text-[14px] text-[#a1a1a1] font-[400] ">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores
-            commodi cupiditate ex.
-          </span>
-        </div>
-        <div className="my-[40px]">
-          <MultipleItems ProductList={laptopAccessoryList} />
-        </div>
-      </div>
+      <LaptopList />
+      <AccessoryList />
     </div>
   );
 }

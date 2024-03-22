@@ -11,6 +11,9 @@ const Card = ({
   image,
   title,
   price,
+  description,
+  icons,
+  id,
 }: {
   width: string;
   height: string;
@@ -18,6 +21,9 @@ const Card = ({
   title: string;
   image: string;
   price: string;
+  description?: string;
+  icons?: boolean;
+  id?: string;
 }) => {
   return (
     <>
@@ -29,24 +35,33 @@ const Card = ({
           borderRadius: rounded,
         }}
       >
-        <Image alt={title} src={image} layout="fill" objectFit="contain" />
+        <img alt={title} src={image} className="card-image" />
         <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.1)] z-10"></div>
         <div className="content">
-          <h3 className="text-[#ffffff] text-[32px]"> {title} </h3>
-          <p className="text-[#ffffff90] text-[24px]"> {price} </p>
+          <div>
+            <h3 className="text-[#ffffff] text-[24px]">
+              {title} {price ? `- ${price}` : ""}
+            </h3>
+          </div>
+
+          <p className="text-[#ffffff] text-[18px]">
+            {description?.slice(0, 30)}
+          </p>
         </div>
-        <div className="card-icons w-full bg-[#dbdbdb] opacity-45 z-40 h-[70px] flex items-center justify-center gap-x-4">
-          <Link href={"products"}>
-            <span className="w-[40px] h-[40px] rounded-full transition-all hover:bg-[rgba(0,0,0,0.1)] flex items-center justify-center text-[20px] text-[#191919]">
-              <IoEyeOutline />
-            </span>
-          </Link>
-          <Link href={"products"}>
-            <span className="w-[40px] h-[40px] rounded-full transition-all hover:bg-[rgba(0,0,0,0.1)] flex items-center justify-center text-[20px] text-[#191919]">
-              <IoCartOutline />
-            </span>
-          </Link>
-        </div>
+        {icons ? (
+          <div className="card-icons w-full bg-[#dbdbdb] opacity-45 z-40 h-[70px] flex items-center justify-center gap-x-4">
+            <Link href={`products/${id}`}>
+              <span className="w-[40px] h-[40px] rounded-full transition-all hover:bg-[rgba(0,0,0,0.1)] flex items-center justify-center text-[20px] text-[#191919]">
+                <IoEyeOutline />
+              </span>
+            </Link>
+            <Link href={"products"}>
+              <span className="w-[40px] h-[40px] rounded-full transition-all hover:bg-[rgba(0,0,0,0.1)] flex items-center justify-center text-[20px] text-[#191919]">
+                <IoCartOutline />
+              </span>
+            </Link>
+          </div>
+        ) : null}
       </div>
       <style>
         {css`
@@ -76,6 +91,15 @@ const Card = ({
           }
           div.card:hover div.card-icons {
             bottom: 0;
+          }
+          div img.card-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: contain;
+            width: 50%;
+            object-position: center;
           }
         `}
       </style>
