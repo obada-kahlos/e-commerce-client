@@ -1,5 +1,4 @@
 import Card from "@/components/card/card";
-import MultipleItems from "@/components/react-slick/react-slick";
 import React from "react";
 import { LaptopList } from "@/feature/laptop-list";
 import { AccessoryList } from "@/feature/Accessory-list";

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { IoEyeOutline, IoCartOutline } from "react-icons/io5";
@@ -63,46 +62,6 @@ const Card = ({
           </div>
         ) : null}
       </div>
-      <style>
-        {css`
-          div.card {
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-          }
-          div.content {
-            position: absolute;
-            padding: 20px;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            z-index: 20;
-            transition: 0.4s;
-          }
-          div.card:hover div.content {
-            opacity: 1;
-          }
-          div.card-icons {
-            position: absolute;
-            bottom: -50%;
-            left: 0;
-            transition: 0.4s;
-          }
-          div.card:hover div.card-icons {
-            bottom: 0;
-          }
-          div img.card-image {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            object-fit: contain;
-            width: 50%;
-            object-position: center;
-          }
-        `}
-      </style>
     </>
   );
 };

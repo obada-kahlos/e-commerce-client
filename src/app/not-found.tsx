@@ -1,6 +1,9 @@
 import React from "react";
 
-
 export default function NotFound() {
-  return <div className="text-[120px] text-[red]">not-found</div>;
+  return (
+    <div className="w-full h-screen flex items-center justify-center">
+      Page not found
+    </div>
+  );
 }
