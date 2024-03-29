@@ -32,7 +32,7 @@ const Navbar = () => {
         <div>
           <Link href={"/"}>
             <h4 className="text-[22px] font-[700] w-[120px] md:text-left text-center font-sans">
-              
+                A-Laptop
             </h4>
           </Link>
         </div>
