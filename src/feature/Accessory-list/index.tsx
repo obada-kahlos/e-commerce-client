@@ -67,11 +67,10 @@ export const AccessoryList = () => {
         <div className="container mx-auto my-[40px]">
           <div className="my-[10px]">
             <h2 className="text-[34px] text-[#2a2a2a] font-[7000]">
-              Accessory
+              بطاريات - حقائب - شاشات
             </h2>
             <span className="text-[14px] text-[#a1a1a1] font-[400] ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
-              cum!
+              جميع اكسسوارات المتعلقة باللابوبات
             </span>
           </div>
           <div className="my-[40px]">
@@ -85,9 +84,9 @@ export const AccessoryList = () => {
                     image={laptopItem.images ? laptopItem.images : ""}
                     title={laptopItem.name ? laptopItem.name : ""}
                     price={laptopItem.price ? laptopItem.price : ""}
-                    description={
-                      laptopItem.description ? laptopItem.description : ""
-                    }
+                    // description={
+                    //   laptopItem.description ? laptopItem.description : ""
+                    // }
                     icons={true}
                     id={laptopItem.id ? laptopItem.id : ""}
                   />

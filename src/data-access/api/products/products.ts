@@ -3,6 +3,7 @@ import { addLaptopListItem } from "@/data-access/slices/product-list";
 import { addAccessoryListItem } from "@/data-access/slices/Accessory-list";
 import { addAllProductsListItem, setAllProductsListItemList } from "@/data-access/slices/all-products-list";
 import { addProductsTypeListItem } from "@/data-access/slices/products-types";
+import { addSearchListItem } from "@/data-access/slices/search-list";
 
 
 export interface ProductList {
@@ -233,8 +234,59 @@ const extendedApi = apiSlice.injectEndpoints({
                 }
             },
         }),
+        getSearchProductsList: builder.query({
+            query: ({ word }) => ({
+                url: ``,
+                method: "POST",
+                body: {
+                    query: `
+                        query MyQuery {
+                            Products(where: {name: {_ilike: "%${word}%"}}){
+                                name
+                                count
+                                description
+                                discount
+                                id
+                                images
+                                price
+                                status
+                                type
+                            }
+                        }
+                    `,
+                },
+            }),
+            transformResponse: (response: {
+                data: { Products: ProductList[] };
+            }) => {
+                const productsTypeList = response?.data?.Products.map(
+                    (obj) => {
+                        return {
+                            description: obj?.description,
+                            discount: obj?.discount,
+                            id: obj?.id,
+                            images: obj?.images[0],
+                            name: obj?.name,
+                            price: obj?.price,
+                            type: obj?.type,
+                        };
+                    }
+                );
+                return productsTypeList;
+            },
+            async onQueryStarted({ word }, { queryFulfilled, dispatch }) {
+                try {
+                    const { data } = await queryFulfilled;
+                    data.forEach((item) => {
+                        dispatch(addSearchListItem(item));
+                    });
+                } catch {
+                    return;
+                }
+            },
+        }),
     })
 })
 
 
-export const { useGetLaptopListQuery, useGetAccessoryListQuery, useGetProductByIdQuery, useGetAllProductsListQuery, useGetAllProductsTypesListQuery } = extendedApi
+export const { useGetLaptopListQuery, useGetAccessoryListQuery, useGetProductByIdQuery, useGetAllProductsListQuery, useGetAllProductsTypesListQuery, useGetSearchProductsListQuery } = extendedApi

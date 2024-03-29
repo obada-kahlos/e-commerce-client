@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { IoEyeOutline, IoCartOutline } from "react-icons/io5";
+import { IoEyeOutline, IoArrowBack } from "react-icons/io5";
 const css = String.raw;
 
 const Card = ({
@@ -10,7 +10,7 @@ const Card = ({
   image,
   title,
   price,
-  description,
+  // description,
   icons,
   id,
 }: {
@@ -20,7 +20,7 @@ const Card = ({
   title: string;
   image: string;
   price: string;
-  description?: string;
+  // description?: string;
   icons?: boolean;
   id?: string;
 }) => {
@@ -43,22 +43,23 @@ const Card = ({
             </h3>
           </div>
 
-          <p className="text-[#ffffff] text-[18px]">
+          {/* <p className="text-[#ffffff] text-[18px]">
             {description?.slice(0, 30)}
-          </p>
+          </p> */}
         </div>
         {icons ? (
-          <div className="card-icons w-full bg-[#dbdbdb] opacity-45 z-40 h-[70px] flex items-center justify-center gap-x-4">
+          <div className="card-icons w-full bg-[#dbdbdb] opacity-45 z-40 h-[70px] flex items-center justify-start px-4 gap-x-4">
             <Link href={`products/${id}`}>
-              <span className="w-[40px] h-[40px] rounded-full transition-all hover:bg-[rgba(0,0,0,0.1)] flex items-center justify-center text-[20px] text-[#191919]">
-                <IoEyeOutline />
-              </span>
+              <div className="flex items-center justify-center gap-2 border-[2px] rounded p-2 border-main_color">
+                 معلومات المنتج
+                <IoArrowBack className="mt-[4px]"/>
+              </div>
             </Link>
-            <Link href={"products"}>
+            {/* <Link href={"products"}>
               <span className="w-[40px] h-[40px] rounded-full transition-all hover:bg-[rgba(0,0,0,0.1)] flex items-center justify-center text-[20px] text-[#191919]">
                 <IoCartOutline />
               </span>
-            </Link>
+            </Link> */}
           </div>
         ) : null}
       </div>
