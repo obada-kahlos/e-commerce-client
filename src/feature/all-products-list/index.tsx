@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   useGetAllProductsListQuery,
   useGetAllProductsTypesListQuery,
@@ -28,8 +28,10 @@ export interface ProductType {
 }
 
 export const AllProductPage = () => {
-  const { isLoading } = useGetAllProductsListQuery({
-    product_type: "Accessory",
+  const [type, setType] = useState("Laptop");
+
+  const { isLoading, refetch, isFetching } = useGetAllProductsListQuery({
+    product_type: type,
   });
   useGetAllProductsTypesListQuery({});
 
@@ -43,7 +45,7 @@ export const AllProductPage = () => {
 
   return (
     <>
-      {isLoading ? (
+      {isFetching ? (
         <div className="container mx-auto my-[40px]">
           <div className="my-[10px] flex items-center justify-between w-full">
             <div className="w-full">
@@ -98,13 +100,38 @@ export const AllProductPage = () => {
                 cum!
               </span>
             </div>
-            <div className="flex items-center gap-4">
+
+            <div className="select-type">
+              <ul className="flex">
+                <li
+                  className={`${
+                    type === "Accessory" ? "type-item-active" : "type-item"
+                  }`}
+                  onClick={() => {
+                    setType("Accessory"), refetch();
+                  }}
+                >
+                  Accessory
+                </li>
+                <li
+                  className={` ${
+                    type === "Laptop" ? "type-item-active" : "type-item"
+                  }`}
+                  onClick={() => {
+                    setType("Laptop"), refetch();
+                  }}
+                >
+                  Laptop
+                </li>
+              </ul>
+            </div>
+            {/* <div className="flex items-center gap-4">
               {selectedProductsTypeListList?.map((productTypeItem, key) => (
                 <p key={productTypeItem.type} className="text-[18px]">
                   {productTypeItem.type}
                 </p>
               ))}
-            </div>
+            </div> */}
           </div>
           <div className="my-[40px]">
             <div className="grid-container">
@@ -129,6 +156,48 @@ export const AllProductPage = () => {
           </div>
         </div>
       )}
+      <style>
+        {`
+          div.select-type {
+            border-bottom: 1px solid #cccccc;
+          }
+          
+          div.select-type ul li {
+            text-align: center;
+            padding-bottom: 10px;
+          }
+          
+          div.select-type ul li.type-item {
+            position: relative;
+            color: #cccccc;
+            font-size: 18px;
+            font-weight: 400;
+            cursor: pointer;
+            width: 120px;
+          }
+          
+          div.select-type ul li.type-item-active {
+            position: relative;
+            color: #232323;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            width: 120px;
+          }
+          
+          div.select-type ul li.type-item-active::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            border-radius: 50px;
+            background-color: var(--main-color);
+          }
+          
+          `}
+      </style>
     </>
   );
 };

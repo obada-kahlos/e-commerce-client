@@ -31,9 +31,8 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div>
           <Link href={"/"}>
-            <h4 className="text-[22px] font-[700] w-[120px] md:text-left text-center">
-              {" "}
-              Logo{" "}
+            <h4 className="text-[22px] font-[700] w-[120px] md:text-left text-center font-sans">
+              
             </h4>
           </Link>
         </div>

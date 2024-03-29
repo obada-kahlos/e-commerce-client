@@ -1,7 +1,7 @@
 import { apiSlice } from "../api";
 import { addLaptopListItem } from "@/data-access/slices/product-list";
 import { addAccessoryListItem } from "@/data-access/slices/Accessory-list";
-import { addAllProductsListItem } from "@/data-access/slices/all-products-list";
+import { addAllProductsListItem, setAllProductsListItemList } from "@/data-access/slices/all-products-list";
 import { addProductsTypeListItem } from "@/data-access/slices/products-types";
 
 
@@ -150,7 +150,7 @@ const extendedApi = apiSlice.injectEndpoints({
                 body: {
                     query: `
                     query MyQuery {
-                        Products{
+                        Products(where: {type: {_eq: ${product_type}}}){
                           description
                           discount
                           id
@@ -182,12 +182,15 @@ const extendedApi = apiSlice.injectEndpoints({
 
                 return laptopList;
             },
-            async onQueryStarted(_, { queryFulfilled, dispatch }) {
+            forceRefetch({ currentArg, previousArg }) {
+                return currentArg !== previousArg;
+            },
+            async onQueryStarted({ product_type }, { queryFulfilled, dispatch }) {
                 try {
                     const { data } = await queryFulfilled;
-                    data.forEach((item) => {
-                        dispatch(addAllProductsListItem(item));
-                    });
+                    // data.forEach((item) => {
+                    dispatch(setAllProductsListItemList(data));
+                    // });
                 } catch {
                     return;
                 }

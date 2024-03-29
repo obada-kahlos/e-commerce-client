@@ -20,7 +20,7 @@ export default function LocaleLayout({
             <div className="md:flex md:justify-between">
               <div className="mb-6 md:mb-0">
                 <div>
-                  <h4 className="text-[22px] font-[700]"> EleTec. </h4>
+                  <h4 className="text-[22px] font-[700]">  A-Laptop </h4>
                 </div>
                 {/* <a href="https://flowbite.com/" className="flex items-center">
                   <img
