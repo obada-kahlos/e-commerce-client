@@ -88,3 +88,19 @@ div img.card-image {
   width: 50%;
   object-position: center;
 }
+
+::placeholder {
+  /* Most modern browsers support this */
+  color: white;
+  opacity: 1; /* Firefox adds lower opacity to the placeholder, so we use opacity: 1 to fix this */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}

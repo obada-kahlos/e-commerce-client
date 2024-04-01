@@ -1,7 +1,7 @@
 import { apiSlice } from "../api";
 import { addLaptopListItem } from "@/data-access/slices/product-list";
 import { addAccessoryListItem } from "@/data-access/slices/Accessory-list";
-import { addAllProductsListItem, setAllProductsListItemList } from "@/data-access/slices/all-products-list";
+import { addAllProductsListItem, setAllProductsListItemList, resetAllProductsList } from "@/data-access/slices/all-products-list";
 import { addProductsTypeListItem } from "@/data-access/slices/products-types";
 import { addSearchListItem } from "@/data-access/slices/search-list";
 
@@ -180,18 +180,12 @@ const extendedApi = apiSlice.injectEndpoints({
                         };
                     }
                 );
-
                 return laptopList;
-            },
-            forceRefetch({ currentArg, previousArg }) {
-                return currentArg !== previousArg;
             },
             async onQueryStarted({ product_type }, { queryFulfilled, dispatch }) {
                 try {
                     const { data } = await queryFulfilled;
-                    // data.forEach((item) => {
                     dispatch(setAllProductsListItemList(data));
-                    // });
                 } catch {
                     return;
                 }

@@ -9,6 +9,7 @@ export default function LocaleLayout({
 }) {
   return (
     <html lang={"en"} dir="rtl">
+      <meta name="viewport" content="width=1024" />
       <body className="bg-white">
         <ProviderComponent>
           <Navbar />
@@ -20,7 +21,7 @@ export default function LocaleLayout({
             <div className="md:flex md:justify-between">
               <div className="mb-6 md:mb-0">
                 <div>
-                  <h4 className="text-[22px] font-[700]"> بحصة لابتوب</h4>
+                  <h4 className="text-[22px] font-[700]"> SP.NET</h4>
                 </div>
                 {/* <a href="https://flowbite.com/" className="flex items-center">
                   <img
@@ -37,12 +38,12 @@ export default function LocaleLayout({
               <div className="">
                 <div>
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
-                    Contact
+                    SP.NET
                   </h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                     <li className="mb-4">
                       <a
-                        // href="https://flowbite.com/"
+                        href="http://wa.me/963956958013"
                         className="hover:underline"
                       >
                         WhatsApp
@@ -50,7 +51,7 @@ export default function LocaleLayout({
                     </li>
                     <li>
                       <a
-                        // href="https://tailwindcss.com/"
+                        href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F320185195898738%2F%3Fref%3Dshare_group_link"
                         className="hover:underline"
                       >
                         Facebook

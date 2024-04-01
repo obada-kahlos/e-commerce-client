@@ -1,0 +1,7 @@
+.hero {
+  background-image: url("/homepageImage.webp");
+  background-repeat: no-repeat;
+  background-size: auto;
+  width: 100%;
+  height: 400px;
+}

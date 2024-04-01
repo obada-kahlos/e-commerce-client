@@ -99,9 +99,11 @@ export const SearchList = ({ word }: { word: string }) => {
                 </div>
               </div>
             </div>
-          ) : <div>
+          ) : (
+            <div className="flex items-center justify-center flex-col w-full h-[400px]">
               <p> لم يتم العثور على منتجات متطابقة مع نتيجة البحث </p>
-            </div>}
+            </div>
+          )}
         </>
       )}
     </>

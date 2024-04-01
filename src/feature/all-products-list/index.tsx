@@ -6,11 +6,13 @@ import {
   useGetAllProductsTypesListQuery,
 } from "@/data-access/api/products/products";
 
-import { selectAllProductsListList } from "@/data-access/slices/all-products-list";
-import { selectProductsTypeListList } from "@/data-access/slices/products-types";
+import {
+  selectAllProductsListList,
+  resetAllProductsList,
+} from "@/data-access/slices/all-products-list";
 
 import { Skeleton } from "@mui/material";
-import { useAppSelector } from "@/store";
+import { useAppSelector, useAppDispatch } from "@/store";
 import Card from "@/components/card/card";
 
 interface ProductList {
@@ -30,6 +32,8 @@ export interface ProductType {
 export const AllProductPage = () => {
   const [type, setType] = useState("Laptop");
 
+  const dispatch = useAppDispatch();
+
   const { isLoading, refetch, isFetching } = useGetAllProductsListQuery({
     product_type: type,
   });
@@ -37,10 +41,6 @@ export const AllProductPage = () => {
 
   const selectedAllProductsListList: ProductList[] = useAppSelector((state) =>
     selectAllProductsListList(state)
-  );
-
-  const selectedProductsTypeListList: ProductType[] = useAppSelector((state) =>
-    selectProductsTypeListList(state)
   );
 
   return (
@@ -101,28 +101,32 @@ export const AllProductPage = () => {
             </div>
 
             <div className="select-type">
-              <ul className="flex">
-                <li
+              <div className="flex gap-x-2">
+                <button
                   className={`${
                     type === "Accessory" ? "type-item-active" : "type-item"
                   }`}
                   onClick={() => {
+                    dispatch(resetAllProductsList());
                     setType("Accessory"), refetch();
                   }}
+                  disabled={isFetching}
                 >
                   أكسسوارات
-                </li>
-                <li
+                </button>
+                <button
                   className={` ${
                     type === "Laptop" ? "type-item-active" : "type-item"
                   }`}
                   onClick={() => {
+                    dispatch(resetAllProductsList());
                     setType("Laptop"), refetch();
                   }}
+                  disabled={isFetching}
                 >
                   لابتوبات
-                </li>
-              </ul>
+                </button>
+              </div>
             </div>
             {/* <div className="flex items-center gap-4">
               {selectedProductsTypeListList?.map((productTypeItem, key) => (
@@ -157,43 +161,26 @@ export const AllProductPage = () => {
       )}
       <style>
         {`
-          div.select-type {
-            border-bottom: 1px solid #cccccc;
-          }
           
-          div.select-type ul li {
+          div.select-type button {
             text-align: center;
-            padding-bottom: 10px;
+            padding: 10px;
+            width : 120px;
+            background-color : rgba(0,0,0,0.5);
+            color : #fff;
+            border-radius : 5px;
           }
           
-          div.select-type ul li.type-item {
+          div.select-type button.type-item-active {
             position: relative;
-            color: #cccccc;
+            color: #ffffff;
             font-size: 18px;
             font-weight: 400;
             cursor: pointer;
             width: 120px;
-          }
-          
-          div.select-type ul li.type-item-active {
-            position: relative;
-            color: #232323;
-            font-size: 18px;
-            font-weight: 500;
-            cursor: pointer;
-            width: 120px;
-          }
-          
-          div.select-type ul li.type-item-active::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            border-radius: 50px;
             background-color: var(--main-color);
           }
+        
           
           `}
       </style>

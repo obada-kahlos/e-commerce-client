@@ -2,6 +2,8 @@ import Card from "@/components/card/card";
 import React from "react";
 import { LaptopList } from "@/feature/laptop-list";
 import { AccessoryList } from "@/feature/Accessory-list";
+import { Hero } from "@/components/hero";
+import { AllProductPage } from "@/feature/all-products-list";
 
 const products = {
   product1: {
@@ -38,8 +40,12 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="sm:container sm:w-full w-[90%] mx-auto my-16 ">
+      <Hero />
       <div className="my-[10px]">
-        <h2 className="text-[34px] text-[#2a2a2a] font-[7000]"> التصنيفات الموجودة بالموقع </h2>
+        <h2 className="text-[34px] text-[#2a2a2a] font-[7000]">
+          {" "}
+          التصنيفات الموجودة بالموقع{" "}
+        </h2>
         <span className="text-[14px] text-[#a1a1a1] font-[400] ">
           جميع انواع الابتوبات و الملحقات الخاصة باللابتوب
         </span>
@@ -114,9 +120,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      <LaptopList />
-      <AccessoryList />
+      <AllProductPage />
+      {/* <LaptopList />
+      <AccessoryList /> */}
     </div>
   );
 }
