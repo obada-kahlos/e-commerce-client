@@ -3,7 +3,7 @@ import React from "react";
 import { IoEyeOutline, IoArrowBack } from "react-icons/io5";
 const css = String.raw;
 
-const Card = ({
+const CardAbout = ({
   width,
   height,
   rounded,
@@ -67,4 +67,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default CardAbout;

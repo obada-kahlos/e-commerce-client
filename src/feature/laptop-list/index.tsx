@@ -6,7 +6,8 @@ import { useGetLaptopListQuery } from "@/data-access/api/products/products";
 import { selectLaptopListList } from "@/data-access/slices/product-list";
 import { useAppSelector } from "@/store";
 import Image from "next/image";
-import Card from "@/components/card/card";
+import CardProduct from "@/components/card-about/card-product";
+
 import { Skeleton } from "@mui/material";
 
 interface ProductList {
@@ -19,12 +20,13 @@ interface ProductList {
   type?: string;
 }
 
-export const LaptopList = () => {
-  const { data, isLoading } = useGetLaptopListQuery({});
-  const selectedLaptopListList: ProductList[] = useAppSelector((state) =>
-    selectLaptopListList(state)
-  );
-
+export const LaptopList = ({
+  isLoading,
+  selectedList,
+}: {
+  isLoading: boolean;
+  selectedList: ProductList[];
+}) => {
   return (
     <>
       {isLoading ? (
@@ -67,25 +69,27 @@ export const LaptopList = () => {
       ) : (
         <div className="container mx-auto my-[40px]">
           <div className="my-[10px]">
-            <h2 className="text-[34px] text-[#2a2a2a] font-[7000]">لابتوبات</h2>
+            <h2 className="md:text-[34px] text-[20px] text-[#2a2a2a] font-[7000]">
+              لابتوبات
+            </h2>
             <span className="text-[14px] text-[#a1a1a1] font-[400] ">
               لابتوبات مكتبية - غيمينغ لابتوب
             </span>
           </div>
           <div className="my-[40px]">
             <div className="grid-container">
-              {selectedLaptopListList?.map((laptopItem, key) => (
+              {selectedList?.map((laptopItem, key) => (
                 <div key={key} className="grid-item">
-                  <Card
+                  <CardProduct
                     height="300px"
                     rounded="10px"
                     width="100%"
                     image={laptopItem.images ? laptopItem.images : ""}
                     title={laptopItem.name ? laptopItem.name : ""}
                     price={laptopItem.price ? laptopItem.price : ""}
-                    // description={
-                    //   laptopItem.description ? laptopItem.description : ""
-                    // }
+                    description={
+                      laptopItem.description ? laptopItem.description : ""
+                    }
                     icons={true}
                     id={laptopItem.id ? laptopItem.id : ""}
                   />

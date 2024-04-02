@@ -9,7 +9,7 @@ export default function LocaleLayout({
 }) {
   return (
     <html lang={"en"} dir="rtl">
-      <meta name="viewport" content="width=1024" />
+      <link rel="icon" href="/logo.png" sizes="any" />
       <body className="bg-white">
         <ProviderComponent>
           <Navbar />
@@ -21,7 +21,7 @@ export default function LocaleLayout({
             <div className="md:flex md:justify-between">
               <div className="mb-6 md:mb-0">
                 <div>
-                  <h4 className="text-[22px] font-[700]"> SP.NET</h4>
+                  <img src="/logo.png" alt="icon" width={"120px"} />
                 </div>
                 {/* <a href="https://flowbite.com/" className="flex items-center">
                   <img
@@ -38,7 +38,7 @@ export default function LocaleLayout({
               <div className="">
                 <div>
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
-                    SP.NET
+                    يمكنك التواصل عن طريق
                   </h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                     <li className="mb-4">

@@ -21,24 +21,26 @@ export const Hero = () => {
   return (
     <>
       <div
-        className={"relative w-full h-[600px] overflow-hidden rounded-[10px]"}
+        className={
+          "relative w-full md:h-[600px] h-auto overflow-hidden rounded-[10px]"
+        }
       >
         <img
           src="/homepageImage.webp"
           alt="hereo-image"
           className="w-full object-contain"
         />
-        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center flex-col z-20">
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center flex-col z-20 md:p-0 p-4 ">
           <h1
-            className={`text-[60px] text-[#fff] font-sans ${inter.className}`}
+            className={`md:text-[60px] text-[20px] text-[#fff] font-sans ${inter.className}`}
           >
             SP<span className="text-main_color">.</span>NET
           </h1>
-          <p className="text-white text-[20px] mb-[20px]">
+          <p className="text-white md:text-[20px] text-[16px] mb-[20px]">
             SP.NET يوفر جميع واحدث انواع الابتوبات
           </p>
           <div
-            className="relative p-2 rounded-[12px] border-[2px] border-main_color overflow-hidden w-[600px]"
+            className="relative p-2 rounded-[12px] border-[2px] border-main_color overflow-hidden md:w-[600px] w-[80%]"
             onKeyDown={handleKeyDown}
           >
             <input
@@ -48,7 +50,7 @@ export const Hero = () => {
               onChange={(e) => setSearch(e.target.value)}
             />
             <span
-              className="absolute top-[50%] left-[10px] text-[28px] translate-y-[-50%] text-white"
+              className="absolute top-[50%] left-[10px] md:text-[28px] text-[18px] translate-y-[-50%] text-white"
               onClick={onSearchClick}
             >
               <IoSearch />

@@ -1,4 +1,4 @@
-import Card from "@/components/card/card";
+import CardAbout from "@/components/card-about/card-about";
 import React from "react";
 import { LaptopList } from "@/feature/laptop-list";
 import { AccessoryList } from "@/feature/Accessory-list";
@@ -42,7 +42,7 @@ export default function Home() {
     <div className="sm:container sm:w-full w-[90%] mx-auto my-16 ">
       <Hero />
       <div className="my-[10px]">
-        <h2 className="text-[34px] text-[#2a2a2a] font-[7000]">
+        <h2 className="md:text-[34px] text-[20px] text-[#2a2a2a] font-[7000]">
           {" "}
           التصنيفات الموجودة بالموقع{" "}
         </h2>
@@ -54,7 +54,7 @@ export default function Home() {
         <div className="md:col-span-6 col-span-12">
           <div className="grid grid-cols-12 gap-4">
             <div className="col-span-12">
-              <Card
+              <CardAbout
                 height="300px"
                 rounded="10px"
                 width="100%"
@@ -88,7 +88,7 @@ export default function Home() {
               />
             </div> */}
             <div className="md:col-span-12 col-span-12">
-              <Card
+              <CardAbout
                 height="300px"
                 rounded="10px"
                 width="100%"
