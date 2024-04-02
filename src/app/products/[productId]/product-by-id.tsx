@@ -95,9 +95,8 @@ export const ProductById = ({ id }: { id: string }) => {
               </div>
             );
           })}
-          <style>
-            {
-              `
+      <style>
+        {`
               div.react-quill{
                 padding : 0px 10px
                 }
@@ -113,10 +112,8 @@ export const ProductById = ({ id }: { id: string }) => {
                   list-style: decimal;	
                   margin-left : 40px	
                 }
-                        `}
-              `
-            }
-          </style>
+              `}
+      </style>
     </>
   );
 };
