@@ -2,7 +2,7 @@ import React from "react";
 import ProductById from "./product-by-id";
 
 export const metadata = {
-  title: "SP.NET",
+  title: "SCPNET",
   description: "جميع انواع الاتبوبات والاكسسورات",
 };
 

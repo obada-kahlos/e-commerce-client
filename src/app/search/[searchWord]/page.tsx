@@ -2,7 +2,7 @@ import { SearchList } from "@/feature/saerch-list";
 import React from "react";
 
 export const metadata = {
-  title: "SP.NET",
+  title: "SCPNET",
   description: "جميع انواع الاتبوبات والاكسسورات",
 };
 

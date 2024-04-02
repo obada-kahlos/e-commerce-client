@@ -19,7 +19,7 @@ const products = [
 ];
 
 export const metadata = {
-  title: "SP.NET",
+  title: "SCPNET",
   description: "جميع انواع الابتوبات و الاكسسوارات",
 };
 

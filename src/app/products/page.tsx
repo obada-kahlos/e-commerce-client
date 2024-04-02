@@ -1,7 +1,7 @@
 import { AllProductPage } from "@/feature/all-products-list";
 
 export const metadata = {
-  title: "SP.NET",
+  title: "SCPNET",
   description: "جميع انواع الاتبوبات والاكسسورات",
 };
 
