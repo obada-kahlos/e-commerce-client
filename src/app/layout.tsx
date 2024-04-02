@@ -49,12 +49,20 @@ export default function LocaleLayout({
                         WhatsApp
                       </a>
                     </li>
-                    <li>
+                    <li className="mb-4">
                       <a
                         href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F320185195898738%2F%3Fref%3Dshare_group_link"
                         className="hover:underline"
                       >
                         Facebook
+                      </a>
+                    </li>
+                    <li className="mb-4">
+                      <a
+                        href="https://t.me/laptopmall"
+                        className="hover:underline"
+                      >
+                        Telegram
                       </a>
                     </li>
                   </ul>
