@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import { IoEyeOutline, IoArrowBack } from "react-icons/io5";
-const css = String.raw;
+import { Parser } from "html-to-react";
+import { unescape } from "lodash";
 
 const CardProduct = ({
   width,
@@ -26,24 +26,48 @@ const CardProduct = ({
   icons?: boolean;
   id?: string;
 }) => {
+  console.log({ description });
+
   return (
-    <div className="max-w-sm min-h-[300px] rounded overflow-hidden shadow-lg">
-      <img className="w-full" alt={title} src={image} />
-      <div className="px-6 py-4 border-t border-[#cccccc]">
-        <div className="font-bold text-xl mb-2">
-          {" "}
-          {title} {price ? `- ${price}` : ""}
+    <>
+      <div className="max-w-sm min-h-[300px] rounded overflow-hidden shadow-lg">
+        <img className="w-full" alt={title} src={image} />
+        <div className="px-6 py-4 border-t border-[#cccccc]">
+          <div className="font-bold text-xl mb-2">
+            {title} {price ? `- ${price}` : ""}
+          </div>
+          <div className="react-quill">
+            {Parser().parse(unescape(description?.slice(0, 40)))}
+          </div>
         </div>
-        <p className="text-gray-700 text-base">{description?.slice(0, 40)}</p>
+        <div className="pt-4 pb-2">
+          <Link href={`products/${id}`}>
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+              معلومات المنتج
+            </span>
+          </Link>
+        </div>
       </div>
-      <div className="pt-4 pb-2">
-        <Link href={`products/${id}`}>
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-             معلومات المنتج
-          </span>
-        </Link>
-      </div>
-    </div>
+      <style>
+        {`
+          div.react-quill{
+            padding : 0px 0px
+            }
+            div.react-quill p,h1,h2,h3,h4,h5,h6,pre{
+            word-break: break-word;
+            white-space: pre-line;
+          }
+            div.react-quill ul {
+              list-style: disc;
+              margin-left : 15px
+          }
+            div.react-quill ol {
+              list-style: decimal;	
+              margin-left : 15px	
+            }
+          `}
+      </style>
+    </>
   );
 };
 

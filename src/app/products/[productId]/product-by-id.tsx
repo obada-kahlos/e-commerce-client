@@ -49,7 +49,7 @@ export const ProductById = ({ id }: { id: string }) => {
             return (
               <div key={key}>
                 {/* <span className="w-[40px] h-[40px] cursor-pointer flex items-center justify-center rounded-full hover:bg-[rgba(0,0,0,0.1)]"> <AiOutlineBackward /> </span> */}
-                <div className="grid grid-cols-12 gap-2">
+                <div className="grid grid-cols-12 gap-8">
                   <div className="md:col-span-4 col-span-12">
                     <div className="w-full h-[400px] p-4 rounded-[0.5rem] bg-[rgba(0,0,0,0.1)] flex items-center justify-center">
                       {productItem?.images?.map((item, imgKey) => (
@@ -97,22 +97,22 @@ export const ProductById = ({ id }: { id: string }) => {
           })}
       <style>
         {`
-              div.react-quill{
-                padding : 0px 10px
-                }
-                div.react-quill p,h1,h2,h3,h4,h5,h6,pre{
-                word-break: break-word;
-                white-space: pre-line;
-              }
-                div.react-quill ul {
-                  list-style: disc;
-                  margin-left : 40px
-              }
-                div.react-quill ol {
-                  list-style: decimal;	
-                  margin-left : 40px	
-                }
-              `}
+          div.react-quill{
+            padding : 0px 0px
+            }
+            div.react-quill p,h1,h2,h3,h4,h5,h6,pre{
+            word-break: break-word;
+            white-space: pre-line;
+          }
+            div.react-quill ul {
+              list-style: disc;
+              margin-right : 15px
+          }
+            div.react-quill ol {
+              list-style: decimal;	
+              margin-right : 15px	
+            }
+          `}
       </style>
     </>
   );
