@@ -10,6 +10,7 @@ export default function LocaleLayout({
   return (
     <html lang={"en"} dir="rtl">
       <meta name="viewport" content="width=1024" />
+      <meta name="keywords" content="SCPNET, ..." />
       <link rel="icon" href="/logo.png" sizes="any" />
       <body className="bg-white">
         <ProviderComponent>

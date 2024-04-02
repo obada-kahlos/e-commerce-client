@@ -1,6 +1,7 @@
 export const metadata = {
   title: "SCPNET",
-  description: "جميع انواع الاتبوبات والاكسسورات",
+  description :  "مرحبا في SCPNET, يوجد جميع انواع الابوتوبات و االاكسسوارات"
+
 };
 
 export default function Products() {

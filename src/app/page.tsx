@@ -20,7 +20,7 @@ const products = [
 
 export const metadata = {
   title: "SCPNET",
-  description: "جميع انواع الابتوبات و الاكسسوارات",
+  description :  "مرحبا في SCPNET, يوجد جميع انواع الابوتوبات و االاكسسوارات"
 };
 
 export default function Home() {
