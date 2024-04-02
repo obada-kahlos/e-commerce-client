@@ -6,7 +6,7 @@ import { useGetLaptopListQuery } from "@/data-access/api/products/products";
 import { selectLaptopListList } from "@/data-access/slices/product-list";
 import { useAppSelector } from "@/store";
 import Image from "next/image";
-import CardProduct from "@/components/card-about/card-product";
+import CardProduct from "@/components/card/card-product";
 
 import { Skeleton } from "@mui/material";
 

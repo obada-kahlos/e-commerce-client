@@ -1,4 +1,4 @@
-import CardAbout from "@/components/card-about/card-about";
+import CardAbout from "@/components/card/card-about";
 import React from "react";
 import { LaptopList } from "@/feature/laptop-list";
 import { AccessoryList } from "@/feature/Accessory-list";

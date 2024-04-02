@@ -7,7 +7,7 @@ import { selectSearchList } from "@/data-access/slices/search-list";
 
 import { useAppSelector } from "@/store";
 import Image from "next/image";
-import Card from "@/components/card-about/card-about";
+import Card from "@/components/card/card-about";
 import { Skeleton } from "@mui/material";
 
 interface ProductList {

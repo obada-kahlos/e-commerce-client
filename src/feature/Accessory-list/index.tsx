@@ -5,7 +5,7 @@ import { useGetAccessoryListQuery } from "@/data-access/api/products/products";
 import { selectAccessoryListList } from "@/data-access/slices/Accessory-list";
 
 import { useAppSelector } from "@/store";
-import CardProduct from "@/components/card-about/card-product";
+import CardProduct from "@/components/card/card-product";
 import { Skeleton } from "@mui/material";
 
 interface ProductList {

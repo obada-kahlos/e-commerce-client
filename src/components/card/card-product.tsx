@@ -27,7 +27,7 @@ const CardProduct = ({
   id?: string;
 }) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="max-w-sm min-h-[300px] rounded overflow-hidden shadow-lg">
       <img className="w-full" alt={title} src={image} />
       <div className="px-6 py-4 border-t border-[#cccccc]">
         <div className="font-bold text-xl mb-2">

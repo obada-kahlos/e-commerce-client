@@ -4,6 +4,8 @@ import { useGetProductByIdQuery } from "@/data-access/api/products/products";
 import { IoMdCart } from "react-icons/io";
 import { Skeleton } from "@mui/material";
 import { AiOutlineBackward } from "react-icons/ai";
+import { Parser } from "html-to-react";
+import { unescape } from "lodash";
 
 interface ProductList {
   description?: string;
@@ -71,11 +73,15 @@ export const ProductById = ({ id }: { id: string }) => {
                         </span>
                       </div>
                       <p className="text-[16px] text-[#191919] font-[400]">
-                        السعر : {productItem.price}, خصم :{productItem.discount}, السعر بعد الخصم : {productItem.price}
+                        السعر : {productItem.price}, خصم :{productItem.discount}
+                        , السعر بعد الخصم : {productItem.price}
                       </p>
-                      <p className="text-[16px] text-[#333333] mt-2">
-                        الوصف : {productItem.description}
+                      <p className="text-[16px] text-[#333333] mt-2 block">
+                        الوصف :
                       </p>
+                      <div className="react-quill">
+                        {Parser().parse(unescape(productItem?.description))}
+                      </div>
                     </div>
                     <div className="">
                       <a href="https://wa.me/963947059779" target="_blank">
@@ -89,6 +95,28 @@ export const ProductById = ({ id }: { id: string }) => {
               </div>
             );
           })}
+          <style>
+            {
+              `
+              div.react-quill{
+                padding : 0px 10px
+                }
+                div.react-quill p,h1,h2,h3,h4,h5,h6,pre{
+                word-break: break-word;
+                white-space: pre-line;
+              }
+                div.react-quill ul {
+                  list-style: disc;
+                  margin-left : 40px
+              }
+                div.react-quill ol {
+                  list-style: decimal;	
+                  margin-left : 40px	
+                }
+                        `}
+              `
+            }
+          </style>
     </>
   );
 };

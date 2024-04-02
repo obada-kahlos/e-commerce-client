@@ -15,7 +15,7 @@ import {
 
 import { Skeleton } from "@mui/material";
 import { useAppSelector, useAppDispatch } from "@/store";
-import Card from "@/components/card-about/card-about";
+import Card from "@/components/card/card-about";
 import { selectLaptopListList } from "@/data-access/slices/product-list";
 import { LaptopList } from "../laptop-list";
 import { selectAccessoryListList } from "@/data-access/slices/Accessory-list";
