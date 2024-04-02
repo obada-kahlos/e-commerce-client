@@ -6,13 +6,13 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 
 interface ProductList {
-  description?: string;
-  discount?: string;
-  id?: string;
-  images?: string;
-  name?: string;
-  price?: string;
-  type?: string;
+  // description?: string;
+  // discount?: string;
+  // id?: string;
+  image?: string;
+  title?: string;
+  // price?: string;
+  // type?: string;
 }
 
 function SampleNextArrow(props) {
@@ -59,39 +59,15 @@ function SamplePrevArrow(props) {
 
 function MultipleItems({ ProductList }: { ProductList: ProductList[] }) {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
-    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 5000,
   };
 
   return (
@@ -99,11 +75,12 @@ function MultipleItems({ ProductList }: { ProductList: ProductList[] }) {
       <Slider {...settings}>
         {ProductList?.map((productItem, key) => {
           return (
-            <div key={key}>
-              <div className="cursor-pointer h-[300px] relative transition hover:bg-[rgba(0,0,0,0.1)]">
+            <div key={key} className="relative bg-[rgba(0,0,0,0.1)]">
+              <div className="cursor-pointer w-full  flex items-center justify-center relative transition hover:bg-[rgba(0,0,0,0.3)]">
                 <img
-                  alt={productItem.name ? productItem.name : ""}
-                  src={productItem.images ? productItem.images : ""}
+                  alt={productItem.title ? productItem.title : ""}
+                  src={productItem.image ? productItem.image : ""}
+                  className="w-[400px]"
                 />
                 {/* <Image
                   alt={productItem.name ? productItem.name : ""}
@@ -111,12 +88,14 @@ function MultipleItems({ ProductList }: { ProductList: ProductList[] }) {
                   layout="fill"
                   objectFit="contain"
                 /> */}
-                {productItem.description}
+                {/* {productItem.description}
                 {productItem.discount}
                 {productItem.id}
                 {productItem.price}
-                {productItem.type}
-                {productItem.name}
+                {productItem.type} */}
+                <p className="absolute top-4 right-4 md:text-[34px] text-[20px]">
+                  {productItem.title}
+                </p>
               </div>
             </div>
           );

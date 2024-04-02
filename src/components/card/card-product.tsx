@@ -30,24 +30,36 @@ const CardProduct = ({
 
   return (
     <>
-      <div className="max-w-sm min-h-[300px] rounded overflow-hidden shadow-lg">
-        <img className="w-full" alt={title} src={image} />
-        <div className="px-6 py-4 border-t border-[#cccccc]">
-          <div className="font-bold text-xl mb-2">
-            {title} {price ? `- ${price}` : ""}
+      <Link href={`products/${id}`}>
+        <div className="card-product max-w-sm rounded overflow-hidden shadow-lg">
+          <div className="h-[300px] flex items-center justify-center">
+            <img className="w-[80%]" alt={title} src={image} />
           </div>
-          <div className="react-quill">
+          <div className="px-6 py-4 border-t border-[#cccccc] flex items-center justify-center flex-col">
+            <div className="font-bold text-xl mb-2">{title}</div>
+            <p className="font-bold text-xl mb">{price}S.P</p>
+            {/* <div className="react-quill">
             {Parser().parse(unescape(description?.slice(0, 40)))}
+          </div> */}
+          </div>
+          <div className="pt-4 pb-2">
+            <Link href={`products/${id}`}>
+              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                معلومات المنتج
+              </span>
+            </Link>
+            {/* <span className="inline-block bg-main_color rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+              جديد
+            </span> */}
+            <span className="inline-block bg-[#23af23] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+              مستعمل
+            </span>
+            {/* <span className="inline-block bg-[#2b2bd8] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+              اوبن بوكس
+            </span> */}
           </div>
         </div>
-        <div className="pt-4 pb-2">
-          <Link href={`products/${id}`}>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-              معلومات المنتج
-            </span>
-          </Link>
-        </div>
-      </div>
+      </Link>
       <style>
         {`
           div.react-quill{
@@ -65,6 +77,7 @@ const CardProduct = ({
               list-style: decimal;	
               margin-left : 15px	
             }
+
           `}
       </style>
     </>

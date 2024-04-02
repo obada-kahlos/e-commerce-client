@@ -1,7 +1,7 @@
 import { AllProductPage } from "@/feature/all-products-list";
 
 export const metadata = {
-  title: "Products page",
+  title: "SP.NET",
   description: "جميع انواع الاتبوبات والاكسسورات",
 };
 

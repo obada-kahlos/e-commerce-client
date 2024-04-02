@@ -1,6 +1,11 @@
 import { SearchList } from "@/feature/saerch-list";
 import React from "react";
 
+export const metadata = {
+  title: "SP.NET",
+  description: "جميع انواع الاتبوبات والاكسسورات",
+};
+
 export default function SearchPage({
   params,
 }: {

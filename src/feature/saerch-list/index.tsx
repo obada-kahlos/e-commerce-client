@@ -7,8 +7,8 @@ import { selectSearchList } from "@/data-access/slices/search-list";
 
 import { useAppSelector } from "@/store";
 import Image from "next/image";
-import Card from "@/components/card/card-about";
 import { Skeleton } from "@mui/material";
+import CardProduct from "@/components/card/card-product";
 
 interface ProductList {
   description?: string;
@@ -81,16 +81,16 @@ export const SearchList = ({ word }: { word: string }) => {
                 <div className="grid-container">
                   {selectedSearchListList?.map((laptopItem, key) => (
                     <div key={key} className="grid-item">
-                      <Card
+                      <CardProduct
                         height="300px"
                         rounded="10px"
                         width="100%"
                         image={laptopItem.images ? laptopItem.images : ""}
                         title={laptopItem.name ? laptopItem.name : ""}
                         price={laptopItem.price ? laptopItem.price : ""}
-                        // description={
-                        //   laptopItem.description ? laptopItem.description : ""
-                        // }
+                        description={
+                          laptopItem.description ? laptopItem.description : ""
+                        }
                         icons={true}
                         id={laptopItem.id ? laptopItem.id : ""}
                       />

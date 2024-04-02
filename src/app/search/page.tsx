@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Search page",
+  title: "SP.NET",
   description: "جميع انواع الاتبوبات والاكسسورات",
 };
 
