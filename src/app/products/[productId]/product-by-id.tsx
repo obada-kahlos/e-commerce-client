@@ -17,6 +17,14 @@ interface ProductList {
   type?: string;
 }
 
+function calculateDiscountedPrice(price: number, discount: number) {
+  console.log(price, discount);
+
+  let discountAmount = (price * discount) / 100;
+  let discountedPrice = price - discountAmount;
+  return discountedPrice;
+}
+
 export const ProductById = ({ id }: { id: string }) => {
   const { data, isLoading } = useGetProductByIdQuery({ id: id });
 
@@ -67,15 +75,20 @@ export const ProductById = ({ id }: { id: string }) => {
                       </div>
                       <p className="text-[16px] text-[#191919] font-[400]">
                         <span className="font-[700]"> Price : </span>
-                        {productItem.price}
+                        {productItem.price}S.P
                       </p>
                       <p className="text-[16px] text-[#191919] font-[400]">
                         <span className="font-[700]"> Discount : </span>
-                        {productItem.discount}
+                        {productItem.discount ? productItem.discount : "0%"}
                       </p>
                       <p className="text-[16px] text-[#191919] font-[400]">
                         <span className="font-[700]"> After discount : </span>
-                        {productItem.price}
+                        {calculateDiscountedPrice(
+                          Number(productItem?.price?.replace(/\./g, "")),
+                          productItem.discount === ""
+                            ? Number(productItem?.discount?.replace(/\./g, ""))
+                            : 0
+                        )}
                       </p>
                       <p className="text-[16px] text-[#333333] mt-2 block">
                         <span className="font-[700]"> Description : </span>
