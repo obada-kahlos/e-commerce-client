@@ -28,6 +28,8 @@ const CardProduct = ({
   id?: string;
   age?: string;
 }) => {
+  console.log({ age });
+
   return (
     <>
       <Link href={`products/${id}`}>

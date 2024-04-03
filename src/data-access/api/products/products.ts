@@ -14,7 +14,7 @@ export interface ProductList {
     name: string;
     price: string;
     type: string;
-    age : string
+    age: string
 }
 
 export interface ProductType {
@@ -57,6 +57,7 @@ const extendedApi = apiSlice.injectEndpoints({
                             name: obj?.name,
                             price: obj?.price,
                             type: obj?.type,
+                            age: obj?.age
                         };
                     }
                 );
@@ -108,6 +109,7 @@ const extendedApi = apiSlice.injectEndpoints({
                             name: obj?.name,
                             price: obj?.price,
                             type: obj?.type,
+                            age: obj?.age
                         };
                     }
                 );
@@ -181,6 +183,7 @@ const extendedApi = apiSlice.injectEndpoints({
                             name: obj?.name,
                             price: obj?.price,
                             type: obj?.type,
+                            age: obj?.age
                         };
                     }
                 );
@@ -268,6 +271,7 @@ const extendedApi = apiSlice.injectEndpoints({
                             name: obj?.name,
                             price: obj?.price,
                             type: obj?.type,
+                            age: obj?.age
                         };
                     }
                 );
