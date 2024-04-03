@@ -88,7 +88,7 @@ export const ProductById = ({ id }: { id: string }) => {
                           productItem.discount === ""
                             ? Number(productItem?.discount?.replace(/\./g, ""))
                             : 0
-                        )}
+                        )}S.P
                       </p>
                       <p className="text-[16px] text-[#333333] mt-2 block">
                         <span className="font-[700]"> Description : </span>
