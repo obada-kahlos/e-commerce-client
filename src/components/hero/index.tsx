@@ -22,7 +22,7 @@ export const Hero = () => {
     <>
       <div
         className={
-          "relative w-full md:h-[600px] h-auto overflow-hidden rounded-[10px]"
+          "relative w-full lg:h-[600px] h-auto overflow-hidden rounded-[10px]"
         }
       >
         <img
