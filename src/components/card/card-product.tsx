@@ -14,6 +14,7 @@ const CardProduct = ({
   // description,
   icons,
   id,
+  age,
 }: {
   width: string;
   height: string;
@@ -25,9 +26,8 @@ const CardProduct = ({
   description?: string;
   icons?: boolean;
   id?: string;
+  age?: string;
 }) => {
-  console.log({ description });
-
   return (
     <>
       <Link href={`products/${id}`}>
@@ -48,15 +48,19 @@ const CardProduct = ({
                 معلومات المنتج
               </span>
             </Link>
-            {/* <span className="inline-block bg-main_color rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
-              جديد
-            </span> */}
-            <span className="inline-block bg-[#23af23] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
-              مستعمل
-            </span>
-            {/* <span className="inline-block bg-[#2b2bd8] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
-              اوبن بوكس
-            </span> */}
+            {age === "جديد" ? (
+              <span className="inline-block bg-main_color rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+                جديد
+              </span>
+            ) : age === "مستعمل" ? (
+              <span className="inline-block bg-[#23af23] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+                مستعمل
+              </span>
+            ) : (
+              <span className="inline-block bg-[#2b2bd8] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+                اوبن بوكس
+              </span>
+            )}
           </div>
         </div>
       </Link>

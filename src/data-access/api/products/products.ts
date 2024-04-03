@@ -14,6 +14,7 @@ export interface ProductList {
     name: string;
     price: string;
     type: string;
+    age : string
 }
 
 export interface ProductType {
@@ -37,6 +38,7 @@ const extendedApi = apiSlice.injectEndpoints({
                           name
                           price
                           type
+                          age
                         }
                       }                  
                     `,
@@ -87,6 +89,7 @@ const extendedApi = apiSlice.injectEndpoints({
                           name
                           price
                           type
+                          age
                         }
                       }                  
                     `,
@@ -159,6 +162,7 @@ const extendedApi = apiSlice.injectEndpoints({
                           name
                           price
                           type
+                          age
                         }
                       }                  
                     `,
@@ -245,6 +249,7 @@ const extendedApi = apiSlice.injectEndpoints({
                                 price
                                 status
                                 type
+                                age
                             }
                         }
                     `,

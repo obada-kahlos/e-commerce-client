@@ -16,6 +16,7 @@ interface ProductList {
   name?: string;
   price?: string;
   type?: string;
+  age?: string;
 }
 
 export const AccessoryList = ({
@@ -25,8 +26,6 @@ export const AccessoryList = ({
   isLoading: boolean;
   selectedList: ProductList[];
 }) => {
-
-
   return (
     <>
       {isLoading ? (
@@ -92,6 +91,7 @@ export const AccessoryList = ({
                     }
                     icons={true}
                     id={laptopItem.id ? laptopItem.id : ""}
+                    age={laptopItem.age ? laptopItem.age : ""}
                   />
                 </div>
               ))}

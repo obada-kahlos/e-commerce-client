@@ -18,6 +18,7 @@ interface ProductList {
   name?: string;
   price?: string;
   type?: string;
+  age?: string;
 }
 
 export const LaptopList = ({
@@ -92,6 +93,7 @@ export const LaptopList = ({
                     }
                     icons={true}
                     id={laptopItem.id ? laptopItem.id : ""}
+                    age={laptopItem.age ? laptopItem.age : ""}
                   />
                 </div>
               ))}
