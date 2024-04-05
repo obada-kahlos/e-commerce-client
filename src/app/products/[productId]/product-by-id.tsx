@@ -6,20 +6,19 @@ import { Skeleton } from "@mui/material";
 import { AiOutlineBackward } from "react-icons/ai";
 import { Parser } from "html-to-react";
 import { unescape } from "lodash";
+import { getImage } from "@/util/get-image-url";
 
 interface ProductList {
   description?: string;
   discount?: string;
   id?: string;
-  images?: string[];
+  image?: string;
   name?: string;
   price?: string;
   type?: string;
 }
 
 function calculateDiscountedPrice(price: number, discount: number) {
-  console.log(price, discount);
-
   let discountAmount = (price * discount) / 100;
   let discountedPrice = price - discountAmount;
   return discountedPrice;
@@ -88,7 +87,8 @@ export const ProductById = ({ id }: { id: string }) => {
                           productItem.discount === ""
                             ? Number(productItem?.discount?.replace(/\./g, ""))
                             : 0
-                        )}S.P
+                        )}
+                        S.P
                       </p>
                       <p className="text-[16px] text-[#333333] mt-2 block">
                         <span className="font-[700]"> Description : </span>
@@ -107,14 +107,11 @@ export const ProductById = ({ id }: { id: string }) => {
                   </div>
                   <div className="md:col-span-4 col-span-12">
                     <div className="w-full h-[400px] p-4 rounded-[0.5rem] bg-[rgba(0,0,0,0.1)] flex items-center justify-center">
-                      {productItem?.images?.map((item, imgKey) => (
-                        <img
-                          key={imgKey}
-                          src={item}
-                          alt={productItem.name}
-                          className="w-[80%]"
-                        />
-                      ))}
+                      <img
+                        src={getImage(productItem?.url1)}
+                        alt={productItem.name}
+                        className="w-[80%]"
+                      />
                     </div>
                   </div>
                 </div>

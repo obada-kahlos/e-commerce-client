@@ -10,7 +10,7 @@ export interface ProductList {
     description: string;
     discount: string;
     id: string;
-    images: string[];
+    url1: string;
     name: string;
     price: string;
     type: string;
@@ -34,7 +34,7 @@ const extendedApi = apiSlice.injectEndpoints({
                           description
                           discount
                           id
-                          images
+                          url1
                           name
                           price
                           type
@@ -53,7 +53,7 @@ const extendedApi = apiSlice.injectEndpoints({
                             description: obj?.description,
                             discount: obj?.discount,
                             id: obj?.id,
-                            images: obj?.images[0],
+                            image: obj?.url1,
                             name: obj?.name,
                             price: obj?.price,
                             type: obj?.type,
@@ -86,7 +86,7 @@ const extendedApi = apiSlice.injectEndpoints({
                           description
                           discount
                           id
-                          images
+                          url1
                           name
                           price
                           type
@@ -105,7 +105,7 @@ const extendedApi = apiSlice.injectEndpoints({
                             description: obj?.description,
                             discount: obj?.discount,
                             id: obj?.id,
-                            images: obj?.images[0],
+                            image: obj?.url1,
                             name: obj?.name,
                             price: obj?.price,
                             type: obj?.type,
@@ -138,10 +138,11 @@ const extendedApi = apiSlice.injectEndpoints({
                           description
                           discount
                           id
-                          images
+                          url1
                           price
                           type
                           name
+                          age
                         }
                       }
                                        
@@ -160,7 +161,7 @@ const extendedApi = apiSlice.injectEndpoints({
                           description
                           discount
                           id
-                          images
+                          url1
                           name
                           price
                           type
@@ -179,7 +180,7 @@ const extendedApi = apiSlice.injectEndpoints({
                             description: obj?.description,
                             discount: obj?.discount,
                             id: obj?.id,
-                            images: obj?.images[0],
+                            image: obj?.url1,
                             name: obj?.name,
                             price: obj?.price,
                             type: obj?.type,
@@ -248,7 +249,7 @@ const extendedApi = apiSlice.injectEndpoints({
                                 description
                                 discount
                                 id
-                                images
+                                url1
                                 price
                                 status
                                 type
@@ -267,7 +268,7 @@ const extendedApi = apiSlice.injectEndpoints({
                             description: obj?.description,
                             discount: obj?.discount,
                             id: obj?.id,
-                            images: obj?.images[0],
+                            image: obj?.url1,
                             name: obj?.name,
                             price: obj?.price,
                             type: obj?.type,

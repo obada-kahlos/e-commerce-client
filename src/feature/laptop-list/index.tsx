@@ -14,7 +14,7 @@ interface ProductList {
   description?: string;
   discount?: string;
   id?: string;
-  images?: string;
+  image?: string;
   name?: string;
   price?: string;
   type?: string;
@@ -28,6 +28,7 @@ export const LaptopList = ({
   isLoading: boolean;
   selectedList: ProductList[];
 }) => {
+
   return (
     <>
       {isLoading ? (
@@ -85,7 +86,7 @@ export const LaptopList = ({
                     height="300px"
                     rounded="10px"
                     width="100%"
-                    image={laptopItem.images ? laptopItem.images : ""}
+                    image={laptopItem.image ? laptopItem.image : ""}
                     title={laptopItem.name ? laptopItem.name : ""}
                     price={laptopItem.price ? laptopItem.price : ""}
                     description={

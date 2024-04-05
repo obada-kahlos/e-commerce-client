@@ -20,7 +20,7 @@ const products = [
 
 export const metadata = {
   title: "SCPNET",
-  description :  "مرحبا في SCPNET, يوجد جميع انواع الابوتوبات و االاكسسوارات"
+  description: "مرحبا في SCPNET, يوجد جميع انواع الابوتوبات و االاكسسوارات",
 };
 
 export default function Home() {
@@ -37,39 +37,7 @@ export default function Home() {
         </span>
       </div>
       <MultipleItems ProductList={products} />
-      {/* <div className="grid grid-cols-12 gap-4">
-        <div className="md:col-span-6 col-span-12">
-          <div className="grid grid-cols-12 gap-4">
-            <div className="col-span-12">
-              <CardAbout
-                height="300px"
-                rounded="10px"
-                width="100%"
-                image={products.product1.image}
-                title={products.product1.title}
-                price={""}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="md:col-span-6 col-span-12">
-          <div className="grid grid-cols-12 gap-4">
-            <div className="md:col-span-12 col-span-12">
-              <CardAbout
-                height="300px"
-                rounded="10px"
-                width="100%"
-                image={products.product3.image}
-                title={products.product3.title}
-                price={""}
-              />
-            </div>
-          </div>
-        </div>
-      </div> */}
       <AllProductPage />
-      {/* <LaptopList />
-      <AccessoryList /> */}
     </div>
   );
 }

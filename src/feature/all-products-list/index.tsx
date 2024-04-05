@@ -25,7 +25,7 @@ interface ProductList {
   description?: string;
   discount?: string;
   id?: string;
-  images?: string;
+  image?: string;
   name?: string;
   price?: string;
   type?: string;
@@ -45,7 +45,7 @@ export const AllProductPage = () => {
     selectLaptopListList(state)
   );
 
-  const { isLoading: isLoadingAccessory } = useGetAccessoryListQuery({});
+  // const { isLoading: isLoadingAccessory } = useGetAccessoryListQuery({});
   const selectedAccessoryListList: ProductList[] = useAppSelector((state) =>
     selectAccessoryListList(state)
   );
@@ -61,7 +61,7 @@ export const AllProductPage = () => {
             onClick={() => {
               setType("Accessory");
             }}
-            disabled={isLoadingLaptop || isLoadingAccessory}
+            disabled={isLoadingLaptop}
           >
             أكسسوارات
           </button>
@@ -72,7 +72,7 @@ export const AllProductPage = () => {
             onClick={() => {
               setType("Laptop");
             }}
-            disabled={isLoadingLaptop || isLoadingAccessory}
+            disabled={isLoadingLaptop}
           >
             لابتوبات
           </button>
@@ -85,7 +85,7 @@ export const AllProductPage = () => {
         />
       ) : (
         <AccessoryList
-          isLoading={isLoadingAccessory}
+          isLoading={false}
           selectedList={selectedAccessoryListList}
         />
       )}
