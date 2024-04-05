@@ -106,11 +106,11 @@ export const ProductById = ({ id }: { id: string }) => {
                     </div>
                   </div>
                   <div className="md:col-span-4 col-span-12">
-                    <div className="w-full h-[400px] p-4 rounded-[0.5rem] bg-[rgba(0,0,0,0.1)] flex items-center justify-center">
+                    <div className="w-full h-full rounded-[0.5rem] bg-[rgba(0,0,0,0.1)]">
                       <img
-                        src={getImage(productItem?.url1)}
+                        src={getImage(productItem?.url1, 3072)}
                         alt={productItem.name}
-                        className="w-[80%]"
+                        className="w-[100%] h-full"
                       />
                     </div>
                   </div>
