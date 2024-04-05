@@ -3,6 +3,7 @@ import React from "react";
 import { Parser } from "html-to-react";
 import { unescape } from "lodash";
 import { getImage } from "@/util/get-image-url";
+import Image from "next/image";
 
 const CardProduct = ({
   width,
@@ -29,7 +30,6 @@ const CardProduct = ({
   id?: string;
   age?: string;
 }) => {
-  console.log({ age });
 
   return (
     <>
@@ -37,6 +37,12 @@ const CardProduct = ({
         <div className="card-product max-w-sm rounded overflow-hidden shadow-lg">
           <div className="h-[300px] flex items-center justify-center">
             <img className="w-[80%]" alt={title} src={getImage(image)} />
+            {/* <Image
+              alt={title}
+              src={getImage(image)}
+              layout="fill"
+              objectFit="contain"
+            /> */}
           </div>
           <div className="px-6 py-4 border-t border-[#cccccc] flex items-center justify-center flex-col">
             <div className="font-bold text-xl mb-2">{title}</div>
