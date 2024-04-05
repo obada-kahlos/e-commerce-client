@@ -12,7 +12,7 @@ interface ProductList {
   description?: string;
   discount?: string;
   id?: string;
-  image?: string;
+  url1?: string;
   name?: string;
   price?: string;
   type?: string;
