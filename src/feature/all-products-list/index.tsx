@@ -35,24 +35,50 @@ export interface ProductType {
   type?: string;
 }
 
+const sortProductsByPrice = (
+  products: ProductList[],
+  direction: "asc" | "desc"
+) => {
+  return products.slice().sort((a, b) => {
+    const priceA = parseFloat(a.price || "0");
+    const priceB = parseFloat(b.price || "0");
+
+    if (direction === "asc") {
+      return priceA - priceB;
+    } else {
+      return priceB - priceA;
+    }
+  });
+};
+
 export const AllProductPage = () => {
   const [type, setType] = useState("Laptop");
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
 
   const dispatch = useAppDispatch();
 
   const { isLoading: isLoadingLaptop } = useGetLaptopListQuery({});
-  const selectedLaptopListList: ProductList[] = useAppSelector((state) =>
+  let selectedLaptopListList: ProductList[] = useAppSelector((state) =>
     selectLaptopListList(state)
   );
 
   // const { isLoading: isLoadingAccessory } = useGetAccessoryListQuery({});
-  const selectedAccessoryListList: ProductList[] = useAppSelector((state) =>
+  let selectedAccessoryListList: ProductList[] = useAppSelector((state) =>
     selectAccessoryListList(state)
+  );
+
+  selectedLaptopListList = sortProductsByPrice(
+    selectedLaptopListList,
+    sortDirection
+  );
+  selectedAccessoryListList = sortProductsByPrice(
+    selectedAccessoryListList,
+    sortDirection
   );
 
   return (
     <>
-      <div className="select-type">
+      <div className="select-type flex items-center justify-between">
         <div className="flex gap-x-2">
           <button
             className={`${
@@ -77,6 +103,18 @@ export const AllProductPage = () => {
             لابتوبات
           </button>
         </div>
+        <span
+          className="cursor-pointer p-2 bg-main_color text-white rounded"
+          onClick={() =>
+            setSortDirection((prevDirection) =>
+              prevDirection === "asc" ? "desc" : "asc"
+            )
+          }
+        >
+          {sortDirection === "asc"
+            ? "من الارخص الى الاغلى"
+            : "من الاغلى الى الارخص"}
+        </span>
       </div>
       {type === "Laptop" ? (
         <LaptopList
@@ -94,6 +132,7 @@ export const AllProductPage = () => {
 
           div.select-type{
             margin : 14px 0px
+            
           }
           
           div.select-type button {
