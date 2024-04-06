@@ -1,10 +1,17 @@
 import React from "react";
 import ProductById from "./product-by-id";
+import type { Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 0.8, // Change this value to adjust the zoom level
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata = {
   title: "SCPNET",
-  description :  "مرحبا في SCPNET, يوجد جميع انواع الابوتوبات و االاكسسوارات"
-
+  description: "مرحبا في SCPNET, يوجد جميع انواع الابوتوبات و االاكسسوارات",
 };
 
 export default function ProductsId({

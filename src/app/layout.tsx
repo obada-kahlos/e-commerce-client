@@ -2,14 +2,7 @@ import "./global.css";
 import ProviderComponent from "@/store/ProviderComponnt";
 import Navbar from "@/components/navbar/navbar";
 
-import type { Viewport } from "next";
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 0.6, // Change this value to adjust the zoom level
-  maximumScale: 1,
-  userScalable: false,
-};
 export default function LocaleLayout({
   children,
 }: {

@@ -6,6 +6,16 @@ import { Hero } from "@/components/hero";
 import { AllProductPage } from "@/feature/all-products-list";
 import MultipleItems from "@/components/react-slick/react-slick";
 
+
+import type { Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 0.5, // Change this value to adjust the zoom level
+  maximumScale: 1,
+  userScalable: false,
+};
+
 const products = [
   {
     image: "/product1.png",
