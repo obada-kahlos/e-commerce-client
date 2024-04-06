@@ -3,7 +3,6 @@ import React from "react";
 import { useGetProductByIdQuery } from "@/data-access/api/products/products";
 import { IoMdCart } from "react-icons/io";
 import { Skeleton } from "@mui/material";
-import { AiOutlineBackward } from "react-icons/ai";
 import { Parser } from "html-to-react";
 import { unescape } from "lodash";
 import { getImage } from "@/util/get-image-url";
@@ -55,16 +54,15 @@ export const ProductById = ({ id }: { id: string }) => {
         : data?.data?.Products?.map((productItem: ProductList, key: number) => {
             return (
               <div key={key}>
-                {/* <span className="w-[40px] h-[40px] cursor-pointer flex items-center justify-center rounded-full hover:bg-[rgba(0,0,0,0.1)]"> <AiOutlineBackward /> </span> */}
                 <div className="grid grid-cols-12 gap-8">
                   <div
                     dir="ltr"
-                    className="md:col-span-8 col-span-12 h-full flex flex-col justify-between md:p-0 p-2"
+                    className="lg:col-span-8 md:col-span-6 col-span-12 h-full flex flex-col justify-between md:p-0 p-2"
                   >
                     <div>
                       <div className="flex justify-between items-center">
                         <p className="text-[20px] text-[#191919] font-[500]">
-                          <span className="font-[700]"> Laptop model : </span>{" "}
+                          <span className="font-[700]"> Laptop model : </span>
                           {productItem.name}
                         </p>
                         <p className="text-[rgb(255,153,0)] text-[18px]">
@@ -105,7 +103,7 @@ export const ProductById = ({ id }: { id: string }) => {
                       </a>
                     </div>
                   </div>
-                  <div className="md:col-span-4 col-span-12">
+                  <div className="lg:col-span-4 md:col-span-6 col-span-12">
                     <div className="w-full h-full rounded-[0.5rem] bg-[rgba(0,0,0,0.1)]">
                       <img
                         src={getImage(productItem?.url1, 3072)}
