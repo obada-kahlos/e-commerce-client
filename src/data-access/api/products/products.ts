@@ -30,7 +30,7 @@ const extendedApi = apiSlice.injectEndpoints({
                 body: {
                     query: `
                     query MyQuery {
-                        Products(where: {type: {_eq: Laptop}}) {
+                        products(where: {type: {_eq: Laptop}}) {
                           description
                           discount
                           id
@@ -45,9 +45,9 @@ const extendedApi = apiSlice.injectEndpoints({
                 },
             }),
             transformResponse: (response: {
-                data: { Products: ProductList[] };
+                data: { products: ProductList[] };
             }) => {
-                const laptopList = response?.data?.Products.map(
+                const laptopList = response?.data?.products.map(
                     (obj) => {
                         return {
                             description: obj?.description,
@@ -82,7 +82,7 @@ const extendedApi = apiSlice.injectEndpoints({
                 body: {
                     query: `
                     query MyQuery {
-                        Products(where: {type: {_eq: Accessory}}) {
+                        products(where: {type: {_eq: Accessory}}) {
                           description
                           discount
                           id
@@ -97,9 +97,9 @@ const extendedApi = apiSlice.injectEndpoints({
                 },
             }),
             transformResponse: (response: {
-                data: { Products: ProductList[] };
+                data: { products: ProductList[] };
             }) => {
-                const laptopList = response?.data?.Products.map(
+                const laptopList = response?.data?.products.map(
                     (obj) => {
                         return {
                             description: obj?.description,
@@ -134,7 +134,7 @@ const extendedApi = apiSlice.injectEndpoints({
                 body: {
                     query: `
                     query MyQuery {
-                        Products(where: {id: {_eq: "${id}"}}){
+                        products(where: {id: {_eq: "${id}"}}){
                           description
                           discount
                           id
@@ -157,7 +157,7 @@ const extendedApi = apiSlice.injectEndpoints({
                 body: {
                     query: `
                     query MyQuery {
-                        Products(where: {type: {_eq: ${product_type}}}){
+                        products(where: {type: {_eq: ${product_type}}}){
                           description
                           discount
                           id
@@ -172,9 +172,9 @@ const extendedApi = apiSlice.injectEndpoints({
                 },
             }),
             transformResponse: (response: {
-                data: { Products: ProductList[] };
+                data: { products: ProductList[] };
             }) => {
-                const laptopList = response?.data?.Products.map(
+                const laptopList = response?.data?.products.map(
                     (obj) => {
                         return {
                             description: obj?.description,
@@ -206,7 +206,7 @@ const extendedApi = apiSlice.injectEndpoints({
                 body: {
                     query: `
                     query MyQuery {
-                        Product_Type {
+                        product_type {
                             type
                           }
                       }                  
@@ -243,7 +243,7 @@ const extendedApi = apiSlice.injectEndpoints({
                 body: {
                     query: `
                         query MyQuery {
-                            Products(where: {name: {_ilike: "%${word}%"}}){
+                            products(where: {name: {_ilike: "%${word}%"}}){
                                 name
                                 count
                                 description
@@ -260,9 +260,9 @@ const extendedApi = apiSlice.injectEndpoints({
                 },
             }),
             transformResponse: (response: {
-                data: { Products: ProductList[] };
+                data: { products: ProductList[] };
             }) => {
-                const productsTypeList = response?.data?.Products.map(
+                const productsTypeList = response?.data?.products.map(
                     (obj) => {
                         return {
                             description: obj?.description,
