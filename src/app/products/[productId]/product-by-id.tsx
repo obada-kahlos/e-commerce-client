@@ -51,7 +51,7 @@ export const ProductById = ({ id }: { id: string }) => {
               </div>
             </div>
           ))
-        : data?.data?.Products?.map((productItem: ProductList, key: number) => {
+        : data?.data?.products?.map((productItem: ProductList, key: number) => {
             return (
               <div key={key}>
                 <div className="grid grid-cols-12 gap-8">
