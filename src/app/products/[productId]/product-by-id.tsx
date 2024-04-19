@@ -93,105 +93,114 @@ export const ProductById = ({ id }: { id: string }) => {
     <>
       {isLoading
         ? Array.from(new Array(1)).map((_, index) => (
-            <div className="grid grid-cols-12 gap-2" key={index}>
-              <div className="md:col-span-8 col-span-12 h-full flex flex-col justify-between">
-                <div>
-                  <div className="flex justify-between items-center">
-                    <Skeleton variant="text" width="60%" />
-                    <Skeleton variant="text" width="40%" />
-                  </div>
-                  <Skeleton variant="text" />
-                  <Skeleton variant="text" />
+          <div className="grid grid-cols-12 gap-2" key={index}>
+            <div className="md:col-span-8 col-span-12 h-full flex flex-col justify-between">
+              <div>
+                <div className="flex justify-between items-center">
+                  <Skeleton variant="text" width="60%" />
+                  <Skeleton variant="text" width="40%" />
                 </div>
-                <div className="">
-                  <Skeleton variant="rectangular" width="150px" height="40px" />
-                </div>
+                <Skeleton variant="text" />
+                <Skeleton variant="text" />
               </div>
-              <div className="md:col-span-4 col-span-12">
-                <div className="w-full h-[400px] p-4 rounded-[0.5rem] bg-[rgba(0,0,0,0.1)] flex items-center justify-center">
-                  <Skeleton variant="rectangular" width="80%" height="100%" />
-                </div>
+              <div className="">
+                <Skeleton variant="rectangular" width="150px" height="40px" />
               </div>
             </div>
-          ))
+            <div className="md:col-span-4 col-span-12">
+              <div className="w-full h-[400px] p-4 rounded-[0.5rem] bg-[rgba(0,0,0,0.1)] flex items-center justify-center">
+                <Skeleton variant="rectangular" width="80%" height="100%" />
+              </div>
+            </div>
+          </div>
+        ))
         : data?.data?.products?.map((productItem: ProductList, key: number) => {
-            return (
-              <div key={key}>
-                <div className="grid grid-cols-12 gap-8">
-                  <div
-                    dir="ltr"
-                    className="lg:col-span-8 md:col-span-6 col-span-12 h-full flex flex-col justify-between md:p-0 p-2"
-                  >
-                    <div>
-                      <div className="flex justify-between items-center">
-                        <p className="text-[20px] text-[#191919] font-[500]">
-                          <span className="font-[700]"> Laptop model : </span>
-                          {productItem.name}
-                        </p>
-                        <p className="text-[rgb(255,153,0)] text-[18px]">
-                          <span className="font-[700]"> Type : </span>
-                          {productItem.type}
-                        </p>
-                      </div>
-                      <p className="text-[16px] text-[#191919] font-[400]">
-                        <span className="font-[700]"> Price : </span>
-                        {productItem.price}S.P
+          return (
+            <div key={key}>
+              <div className="grid grid-cols-12 gap-8">
+                <div
+                  dir="ltr"
+                  className="lg:col-span-8 md:col-span-6 col-span-12 h-full flex flex-col justify-between md:p-0 p-2"
+                >
+                  <div>
+                    <div className="flex justify-between items-center">
+                      <p className="text-[20px] text-[#191919] font-[500]">
+                        <span className="font-[700]"> Laptop model : </span>
+                        {productItem.name}
                       </p>
-                      <p className="text-[16px] text-[#191919] font-[400]">
-                        <span className="font-[700]"> Discount : </span>
-                        {productItem.discount ? productItem.discount : "0%"}
+                      <p className="text-[rgb(255,153,0)] text-[18px]">
+                        <span className="font-[700]"> Type : </span>
+                        {productItem.type}
                       </p>
-                      <p className="text-[16px] text-[#191919] font-[400]">
-                        <span className="font-[700]"> After discount : </span>
-                        {calculateDiscountedPrice(
-                          Number(productItem?.price?.replace(/\./g, "")),
-                          productItem.discount === ""
-                            ? Number(productItem?.discount?.replace(/\./g, ""))
-                            : 0
-                        )}
-                        S.P
-                      </p>
-                      <p className="text-[16px] text-[#333333] mt-2 block">
-                        <span className="font-[700]"> Description : </span>
-                      </p>
-                      <div className="react-quill">
-                        {Parser().parse(unescape(productItem?.description))}
-                      </div>
                     </div>
-                    <div className="">
-                      <a href="http://wa.me/963956958013" target="_blank">
-                        <button className="w-[150px] rounded p-4 bg-[rgb(255,153,0)] cursor-pointer text-white flex items-center justify-center gap-2">
-                          Order now <IoMdCart />
-                        </button>
-                      </a>
+                    <p className="text-[16px] text-[#191919] font-[400]">
+                      <span className="font-[700]"> Price : </span>
+                      {productItem.price}S.P
+                    </p>
+                    <p className="text-[16px] text-[#191919] font-[400]">
+                      <span className="font-[700]"> Discount : </span>
+                      {productItem.discount ? productItem.discount : "0%"}
+                    </p>
+                    <p className="text-[16px] text-[#191919] font-[400]">
+                      <span className="font-[700]"> After discount : </span>
+                      {calculateDiscountedPrice(
+                        Number(productItem?.price?.replace(/\./g, "")),
+                        productItem.discount === ""
+                          ? Number(productItem?.discount?.replace(/\./g, ""))
+                          : 0
+                      )}
+                      S.P
+                    </p>
+                    <p className="text-[16px] text-[#333333] mt-2 block">
+                      <span className="font-[700]"> Description : </span>
+                    </p>
+                    <div className="react-quill">
+                      {Parser().parse(unescape(productItem?.description))}
                     </div>
                   </div>
-                  <div className="lg:col-span-4 md:col-span-6 col-span-12">
-                    <div className="slider-container">
-                      <Slider {...settings}>
-                        <div>
-                          <img src={getImage(productItem?.url1, 3072)} />
-                        </div>
-                        <div>
-                          <img src={getImage(productItem?.url2, 3072)} />
-                        </div>
-                        <div>
-                          <img src={getImage(productItem?.url3, 3072)} />
-                        </div>
-                      </Slider>
-                    </div>
-                    {/* <div className="w-full h-full rounded-[0.5rem] bg-[rgba(0,0,0,0.1)]">
+                  <div className="">
+                    <a href="http://wa.me/963956958013" target="_blank">
+                      <button className="w-[150px] rounded p-4 bg-[rgb(255,153,0)] cursor-pointer text-white flex items-center justify-center gap-2">
+                        Order now <IoMdCart />
+                      </button>
+                    </a>
+                  </div>
+                </div>
+                <div className="lg:col-span-4 md:col-span-6 col-span-12">
+                  <div className="slider-container">
+                    <Slider {...settings}>
+                      {
+                        productItem?.url1 ?
+                          <div>
+                            <img src={getImage(productItem?.url1, 3072)} />
+                          </div> : null
+                      }
+                      {
+                        productItem?.url2 ?
+                          <div>
+                            <img src={getImage(productItem?.url2, 3072)} />
+                          </div> : null
+                      }
+                      {
+                        productItem?.url3 ?
+                          <div>
+                            <img src={getImage(productItem?.url3, 3072)} />
+                          </div> : null
+                      }
+                    </Slider>
+                  </div>
+                  {/* <div className="w-full h-full rounded-[0.5rem] bg-[rgba(0,0,0,0.1)]">
                       <img
                         src={getImage(productItem?.url1, 3072)}
                         alt={productItem.name}
                         className="w-[100%] h-full"
                       />
                     </div> */}
-                  </div>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          );
+        })}
       <style>
         {`
           div.react-quill{
