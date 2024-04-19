@@ -7,11 +7,18 @@ import { Parser } from "html-to-react";
 import { unescape } from "lodash";
 import { getImage } from "@/util/get-image-url";
 
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 interface ProductList {
   description?: string;
   discount?: string;
   id?: string;
   url1?: string;
+  url2?: string;
+  url3?: string;
   name?: string;
   price?: string;
   type?: string;
@@ -23,8 +30,64 @@ function calculateDiscountedPrice(price: number, discount: number) {
   return discountedPrice;
 }
 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "flex",
+        background: "#ccc",
+        width: "40px",
+        height: "40px",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: "50%",
+        color: "black",
+        zIndex: "999",
+      }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "flex",
+        background: "#ccc",
+        width: "40px",
+        height: "40px",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: "50%",
+        color: "black",
+        zIndex: "999",
+      }}
+      onClick={onClick}
+    />
+  );
+}
+
 export const ProductById = ({ id }: { id: string }) => {
   const { data, isLoading } = useGetProductByIdQuery({ id: id });
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+  };
 
   return (
     <>
@@ -104,13 +167,26 @@ export const ProductById = ({ id }: { id: string }) => {
                     </div>
                   </div>
                   <div className="lg:col-span-4 md:col-span-6 col-span-12">
-                    <div className="w-full h-full rounded-[0.5rem] bg-[rgba(0,0,0,0.1)]">
+                    <div className="slider-container">
+                      <Slider {...settings}>
+                        <div>
+                          <img src={getImage(productItem?.url1, 3072)} />
+                        </div>
+                        <div>
+                          <img src={getImage(productItem?.url2, 3072)} />
+                        </div>
+                        <div>
+                          <img src={getImage(productItem?.url3, 3072)} />
+                        </div>
+                      </Slider>
+                    </div>
+                    {/* <div className="w-full h-full rounded-[0.5rem] bg-[rgba(0,0,0,0.1)]">
                       <img
                         src={getImage(productItem?.url1, 3072)}
                         alt={productItem.name}
                         className="w-[100%] h-full"
                       />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

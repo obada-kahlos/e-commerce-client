@@ -139,6 +139,8 @@ const extendedApi = apiSlice.injectEndpoints({
                           discount
                           id
                           url1
+                          url2
+                          url3
                           price
                           type
                           name
