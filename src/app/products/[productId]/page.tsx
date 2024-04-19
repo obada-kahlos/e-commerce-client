@@ -4,7 +4,7 @@ import type { Viewport } from "next";
 
 export const viewport: Viewport = {
   width: "device-width",
-  initialScale: 0.8, // Change this value to adjust the zoom level
+  initialScale: 0.6, // Change this value to adjust the zoom level
   maximumScale: 1,
   userScalable: false,
 };

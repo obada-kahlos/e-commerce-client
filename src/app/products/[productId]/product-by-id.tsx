@@ -80,11 +80,10 @@ export const ProductById = ({ id }: { id: string }) => {
   const settings = {
     dots: true,
     infinite: true,
-    autoplay: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    initialSlide: 0,
+    initialSlide: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
@@ -169,24 +168,20 @@ export const ProductById = ({ id }: { id: string }) => {
                 <div className="lg:col-span-4 md:col-span-6 col-span-12">
                   <div className="slider-container">
                     <Slider {...settings}>
-                      {
-                        productItem?.url1 ?
-                          <div>
-                            <img src={getImage(productItem?.url1, 3072)} />
-                          </div> : null
-                      }
-                      {
-                        productItem?.url2 ?
-                          <div>
-                            <img src={getImage(productItem?.url2, 3072)} />
-                          </div> : null
-                      }
-                      {
-                        productItem?.url3 ?
-                          <div>
-                            <img src={getImage(productItem?.url3, 3072)} />
-                          </div> : null
-                      }
+
+                      <div>
+                        <img src={getImage(productItem?.url1, 3072)} />
+                      </div>
+
+                      <div>
+                        <img src={getImage(productItem?.url2, 3072)} />
+                      </div>
+
+
+                      <div>
+                        <img src={getImage(productItem?.url3, 3072)} />
+                      </div>
+
                     </Slider>
                   </div>
                   {/* <div className="w-full h-full rounded-[0.5rem] bg-[rgba(0,0,0,0.1)]">
