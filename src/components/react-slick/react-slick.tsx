@@ -51,6 +51,7 @@ function SamplePrevArrow(props) {
         alignItems: "center",
         borderRadius: "50%",
         color: "black",
+        zIndex: 99999,
       }}
       onClick={onClick}
     />
@@ -75,8 +76,8 @@ function MultipleItems({ ProductList }: { ProductList: ProductList[] }) {
       <Slider {...settings}>
         {ProductList?.map((productItem, key) => {
           return (
-            <div key={key} className="relative bg-[rgba(0,0,0,0.1)]">
-              <div className="cursor-pointer w-full  flex items-center justify-center relative transition hover:bg-[rgba(0,0,0,0.3)]">
+            <div key={key} className="relative bg-[rgba(255,255,255)]">
+              <div className="cursor-pointer w-full  flex items-center justify-center relative transition hover:bg-[rgba(0,0,0,0.0.5)]">
                 <img
                   alt={productItem.title ? productItem.title : ""}
                   src={productItem.image ? productItem.image : ""}

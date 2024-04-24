@@ -18,13 +18,21 @@ export const viewport: Viewport = {
 
 const products = [
   {
-    image: "/product1.png",
-    title: "لابتوبات مكتبية - غيمينغ لابتوب",
+    image: "/ads1.jpeg",
+    title: "",
   },
 
   {
-    image: "/product3.png",
-    title: "بطاريات - حقائب - شاشات",
+    image: "/ads2.jpeg",
+    title: "",
+  },
+  {
+    image: "/ads3.jpeg",
+    title: "",
+  },
+  {
+    image: "/ads4.jpeg",
+    title: "",
   },
 ];
 
