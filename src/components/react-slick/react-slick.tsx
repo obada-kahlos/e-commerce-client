@@ -77,7 +77,7 @@ function MultipleItems({ ProductList }: { ProductList: ProductList[] }) {
         {ProductList?.map((productItem, key) => {
           return (
             <div key={key} className="relative bg-[rgba(255,255,255)]">
-              <div className="cursor-pointer w-full  flex items-center justify-center relative transition hover:bg-[rgba(0,0,0,0.0.5)]">
+              <div className="cursor-pointer w-full  flex items-center justify-center relative transition hover:bg-[rgba(0,0,0,0.1)]">
                 <img
                   alt={productItem.title ? productItem.title : ""}
                   src={productItem.image ? productItem.image : ""}
