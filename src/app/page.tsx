@@ -18,20 +18,36 @@ export const viewport: Viewport = {
 
 const products = [
   {
-    image: "/ads1.jpeg",
+    image: "/ads1.jpg",
     title: "",
   },
 
   {
-    image: "/ads2.jpeg",
+    image: "/ads2.jpg",
     title: "",
   },
   {
-    image: "/ads3.jpeg",
+    image: "/ads3.jpg",
     title: "",
   },
   {
-    image: "/ads4.jpeg",
+    image: "/ads4.jpg",
+    title: "",
+  },
+  {
+    image: "/ads5.jpg",
+    title: "",
+  },
+  {
+    image: "/ads6.jpg",
+    title: "",
+  },
+  {
+    image: "/ads7.jpg",
+    title: "",
+  },
+  {
+    image: "/ads8.jpg",
     title: "",
   },
 ];
