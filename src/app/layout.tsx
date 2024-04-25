@@ -2,7 +2,6 @@ import "./global.css";
 import ProviderComponent from "@/store/ProviderComponnt";
 import Navbar from "@/components/navbar/navbar";
 import Head from "next/head";
-import Analytics from "./Analytics";
 
 
 export default function LocaleLayout({
