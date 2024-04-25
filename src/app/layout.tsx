@@ -17,7 +17,6 @@ export default function LocaleLayout({
       <link rel="icon" href="/logo.png" sizes="any" />
       <body className="bg-white">
         <ProviderComponent>
-          <Analytics />
           <Navbar />
           {children}
         </ProviderComponent>
