@@ -1,6 +1,7 @@
 import "./global.css";
 import ProviderComponent from "@/store/ProviderComponnt";
 import Navbar from "@/components/navbar/navbar";
+import Head from "next/head";
 
 
 export default function LocaleLayout({
@@ -10,9 +11,22 @@ export default function LocaleLayout({
 }) {
   return (
     <html lang={"en"} dir="rtl">
-      <meta name="viewport" content="width=1024" />
-      <meta name="keywords" content="SCPNET, ..." />
-      <link rel="icon" href="/logo.png" sizes="any" />
+      <Head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-365XQ5XEYX"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-365XQ5XEYX');
+              `,
+          }}
+        />
+        <meta name="viewport" content="width=1024" />
+        <meta name="keywords" content="SCPNET, ..." />
+        <link rel="icon" href="/logo.png" sizes="any" />
+      </Head>
       <body className="bg-white">
         <ProviderComponent>
           <Navbar />
