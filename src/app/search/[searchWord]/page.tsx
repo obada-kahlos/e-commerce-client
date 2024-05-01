@@ -3,8 +3,8 @@ import React from "react";
 import type { Viewport } from "next";
 
 export const metadata = {
-  title: "SCPNET",
-  description: "مرحبا في SCPNET, يوجد جميع انواع الابوتوبات و االاكسسوارات",
+  title: "Space Net For Laptop",
+  description: "سبيس نت فو لابتوب, جميع انواع الابتوبات المكتبية و الغيمنغ لابتوب و الاكسسوارات",
 };
 
 export const viewport: Viewport = {

@@ -12,7 +12,7 @@ export default function LocaleLayout({
   return (
     <html lang={"en"} dir="rtl">
       <meta name="viewport" content="width=1024" />
-      <meta name="keywords" content="SCPNET, ..." />
+      <meta name="keywords" content="SCPNET..." />
       <link rel="icon" href="/logo.png" sizes="any" />
       <body className="bg-white">
         <ProviderComponent>
@@ -78,7 +78,7 @@ export default function LocaleLayout({
               <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                 © 2024
                 <a href="https://flowbite.com/" className="hover:underline">
-                  SP.NET
+                  Space Net For Laptop.
                 </a>
                 . All Rights Reserved.
               </span>
