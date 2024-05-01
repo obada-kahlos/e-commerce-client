@@ -13,6 +13,7 @@ export default function LocaleLayout({
     <html lang={"en"} dir="rtl">
       <meta name="viewport" content="width=1024" />
       <meta name="keywords" content="SCPNET..." />
+      <meta name="google-site-verification" content="sXMXcw-2VzB_JqJrK5F341-46d9Fydeh6210CvUXqY4" />
       <link rel="icon" href="/logo.png" sizes="any" />
       <body className="bg-white">
         <ProviderComponent>
