@@ -78,9 +78,9 @@ export default function LocaleLayout({
               <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                 © 2024
                 <a href="https://flowbite.com/" className="hover:underline">
-                  Space Net For Laptop.
+                 {" "}  Space Net For Laptop. {" "}
                 </a>
-                . All Rights Reserved.
+                 All Rights Reserved.
               </span>
             </div>
           </div>

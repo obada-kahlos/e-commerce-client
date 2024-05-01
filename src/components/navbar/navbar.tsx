@@ -29,7 +29,7 @@ const Navbar = () => {
     <nav className="sticky top-0 left-0 w-full h-[70px] bg-white overflow-hidden shadow-md z-50">
       <div className="container mx-auto flex justify-end items-center h-[70px]">
         <Link href={"/"} className="flex items-center gap-2">
-          <h4 className="text-[22px] font-[700] w-[120px] md:text-left text-center font-sans">
+          <h4 className="text-[22px] font-[700] md:text-left text-center font-sans">
             Space Net For Laptop.
           </h4>
           <img src="/logo.png" alt="icon" width={"60px"} />
