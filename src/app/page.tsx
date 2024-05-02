@@ -59,7 +59,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="sm:container sm:w-full w-[90%] mx-auto my-16 ">
+    <div className="sm:container w-[90%] mx-auto mb-16 mt-8 ">
       <Hero />
       <div className="my-[10px]">
         <h2 className="md:text-[34px] text-[20px] text-[#2a2a2a] font-[7000]">

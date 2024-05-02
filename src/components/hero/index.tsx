@@ -1,7 +1,11 @@
 "use client";
+
 import React, { useState } from "react";
 import { Inter } from "next/font/google";
 import { IoSearch } from "react-icons/io5";
+import { FaTelegramPlane } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +24,35 @@ export const Hero = () => {
 
   return (
     <>
+      <ul className="flex items-center gap-4 text-gray-500 dark:text-gray-400 font-medium mb-8">
+        <li className="flex items-center justify-center gap-4">
+          <a
+            href="http://wa.me/963956958013"
+            className="hover:underline"
+          >
+            WhatsApp
+          </a>
+          <IoLogoWhatsapp className="text-gray-500" size={20} />
+        </li>
+        <li className="flex items-center justify-center gap-4">
+          <a
+            href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F320185195898738%2F%3Fref%3Dshare_group_link"
+            className="hover:underline"
+          >
+            Facebook
+          </a>
+          <FaFacebook className="text-gray-500" size={20} />
+        </li>
+        <li className="flex items-center justify-center gap-4">
+          <a
+            href="https://t.me/laptopmall"
+            className="hover:underline"
+          >
+            Telegram
+          </a>
+          <FaTelegramPlane className="text-gray-500" size={20} />
+        </li>
+      </ul>
       <div
         className={
           "relative w-full lg:h-[600px] h-auto overflow-hidden rounded-[10px]"
@@ -32,13 +65,10 @@ export const Hero = () => {
         />
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center flex-col z-20 md:p-0 p-4 ">
           <h1
-            className={`md:text-[60px] text-[20px] text-[#fff] font-sans ${inter.className}`}
+            className={`md:text-[45px] text-[20px] text-[#fff] font-sans mb-4 ${inter.className}`}
           >
-            SP<span className="text-main_color">.</span>NET
+            .Space Net For Laptop
           </h1>
-          <p className="text-white md:text-[20px] text-[16px] mb-[20px]">
-            SP.NET يوفر جميع واحدث انواع الابتوبات
-          </p>
           <div
             className="relative p-2 rounded-[12px] border-[2px] border-main_color overflow-hidden md:w-[600px] w-[80%]"
             onKeyDown={handleKeyDown}

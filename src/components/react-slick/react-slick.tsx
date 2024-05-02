@@ -22,6 +22,8 @@ function SampleNextArrow(props) {
       className={className}
       style={{
         ...style,
+        position: "absolute",
+        left: "40px",
         display: "flex",
         background: "#ccc",
         width: "40px",
@@ -43,6 +45,8 @@ function SamplePrevArrow(props) {
       className={className}
       style={{
         ...style,
+        position: "absolute",
+        right: "40px",
         display: "flex",
         background: "#ccc",
         width: "40px",
@@ -62,7 +66,7 @@ function MultipleItems({ ProductList }: { ProductList: ProductList[] }) {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
