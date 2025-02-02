@@ -75,15 +75,13 @@ export default function LocaleLayout({
               {/* grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 */}
             </div>
             <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-            <div className="sm:flex items-center">
-              <a href="https://xdevelopment.net/" target="_blank">
-                <p
-                  className={`text-[20px] text-buttons_color text-center`}
-                >
-                  © 2025 <span className="underline">XDevelopment</span>. All rights reserved.
-                </p>
-              </a>
-            </div>
+            <a href="https://xdevelopment.net/" target="_blank">
+              <p
+                className={`text-[20px] text-buttons_color text-center`}
+              >
+                © 2025 <span className="underline">XDevelopment</span>. All rights reserved.
+              </p>
+            </a>
           </div>
         </footer>
       </body>
