@@ -55,7 +55,7 @@ export const Hero = () => {
       </ul>
       <div
         className={
-          "relative w-full lg:h-[600px] h-auto overflow-hidden rounded-[10px]"
+          "relative w-full h-auto overflow-hidden rounded-[10px]"
         }
       >
         <img
