@@ -63,7 +63,7 @@ export const Hero = () => {
           alt="hereo-image"
           className="w-full object-contain"
         />
-        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center flex-col z-20 md:p-0 p-4 ">
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-start flex-col z-20 md:p-0 p-4 ">
           <h1
             className={`md:text-[45px] text-[20px] text-[#fff] font-sans mb-4 ${inter.className}`}
           >

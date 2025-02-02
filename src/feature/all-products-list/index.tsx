@@ -80,7 +80,7 @@ export const AllProductPage = () => {
     <>
       <div className="select-type flex items-center justify-between">
         <div className="flex gap-x-2">
-          <button
+          {/* <button
             className={`${
               type === "Accessory" ? "type-item-active" : "type-item"
             }`}
@@ -90,7 +90,7 @@ export const AllProductPage = () => {
             disabled={isLoadingLaptop}
           >
             أكسسوارات
-          </button>
+          </button> */}
           <button
             className={` ${
               type === "Laptop" ? "type-item-active" : "type-item"
