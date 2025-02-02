@@ -87,17 +87,6 @@ function MultipleItems({ ProductList }: { ProductList: ProductList[] }) {
                   src={productItem.image ? productItem.image : ""}
                   className="w-[400px]"
                 />
-                {/* <Image
-                  alt={productItem.name ? productItem.name : ""}
-                  src={productItem.images ? productItem.images : ""}
-                  layout="fill"
-                  objectFit="contain"
-                /> */}
-                {/* {productItem.description}
-                {productItem.discount}
-                {productItem.id}
-                {productItem.price}
-                {productItem.type} */}
                 <p className="absolute top-4 right-4 md:text-[34px] text-[20px]">
                   {productItem.title}
                 </p>

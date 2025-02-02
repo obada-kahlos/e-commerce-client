@@ -40,7 +40,7 @@ export default function LocaleLayout({
                     </li>
                     <li className="mb-4">
                       <a
-                        href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F320185195898738%2F%3Fref%3Dshare_group_link"
+                        href="https://www.facebook.com/profile.php?id=61572406436431"
                         className="hover:underline"
                       >
                         Facebook
@@ -48,7 +48,7 @@ export default function LocaleLayout({
                     </li>
                     <li className="mb-4">
                       <a
-                        href="https://t.me/laptopmall"
+                        href="https://t.me/laptop_space_net"
                         className="hover:underline"
                       >
                         Telegram
