@@ -6,7 +6,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 0.6, // Change this value to adjust the zoom level
   maximumScale: 1,
-  userScalable: false,
+  userScalable: true,
 };
 
 export const metadata = {
