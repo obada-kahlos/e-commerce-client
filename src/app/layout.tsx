@@ -78,7 +78,7 @@ export default function LocaleLayout({
             <div className="sm:flex items-center">
               <a href="https://xdevelopment.net/" target="_blank">
                 <p
-                  className={`text-[20px] text-buttons_color text-center md:text-start`}
+                  className={`text-[20px] text-buttons_color text-center`}
                 >
                   © 2025 <span className="underline">XDevelopment</span>. All rights reserved.
                 </p>
