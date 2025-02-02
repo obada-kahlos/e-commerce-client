@@ -76,13 +76,13 @@ export default function LocaleLayout({
             </div>
             <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
             <div className="sm:flex sm:items-center sm:justify-between">
-              <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-                © 2025
-                <a href="https://flowbite.com/" className="hover:underline">
-                  {" "}  Space Net For Laptop. {" "}
-                </a>
-                All Rights Reserved.
-              </span>
+              <a href="https://xdevelopment.net/" target="_blank">
+                <p
+                  className={`text-[20px] text-buttons_color text-center md:text-start`}
+                >
+                  © 2025 <span className="underline">XDevelopment</span>. All rights reserved.
+                </p>
+              </a>
             </div>
           </div>
         </footer>
