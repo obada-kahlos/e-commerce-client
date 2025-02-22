@@ -1,6 +1,6 @@
 import { apiSlice } from "@/data-access/api/api";
 import { laptopList } from "@/data-access/slices/product-list";
-import { accessoryList } from "@/data-access/slices/Accessory-list"
+import { accessoryList } from "@/data-access/slices/Accessory-list";
 
 import { configureStore } from "@reduxjs/toolkit";
 import { allProductsList } from "@/data-access/slices/all-products-list";
@@ -14,7 +14,7 @@ export const store = configureStore({
     accessoryList,
     allProductsList,
     productsTypeList,
-    searchList
+    searchList,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiSlice.middleware),

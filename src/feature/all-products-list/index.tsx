@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   useGetAccessoryListQuery,
   useGetAllProductsListQuery,
   useGetAllProductsTypesListQuery,
+  useGetDollarQuery,
   useGetLaptopListQuery,
 } from "@/data-access/api/products/products";
 
@@ -58,6 +59,17 @@ export const AllProductPage = () => {
   const dispatch = useAppDispatch();
 
   const { isLoading: isLoadingLaptop } = useGetLaptopListQuery({});
+
+  const { data } = useGetDollarQuery({});
+  const [dollar, setDollar] = useState(0);
+
+  useEffect(() => {
+    if (data?.data?.dollar_price_by_pk) {
+      setDollar(data?.data?.dollar_price_by_pk?.dollar_price ?? 0);
+    }
+  }, [data]);
+
+
   let selectedLaptopListList: ProductList[] = useAppSelector((state) =>
     selectLaptopListList(state)
   );
@@ -92,9 +104,8 @@ export const AllProductPage = () => {
             أكسسوارات
           </button> */}
           <button
-            className={` ${
-              type === "Laptop" ? "type-item-active" : "type-item"
-            }`}
+            className={` ${type === "Laptop" ? "type-item-active" : "type-item"
+              }`}
             onClick={() => {
               setType("Laptop");
             }}
@@ -118,6 +129,7 @@ export const AllProductPage = () => {
       </div>
       {type === "Laptop" ? (
         <LaptopList
+          dollarPrice={dollar}
           isLoading={isLoadingLaptop}
           selectedList={selectedLaptopListList}
         />

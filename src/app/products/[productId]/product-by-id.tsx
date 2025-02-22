@@ -1,6 +1,6 @@
 "use client";
-import React from "react";
-import { useGetProductByIdQuery } from "@/data-access/api/products/products";
+import React, { useEffect, useState } from "react";
+import { useGetDollarQuery, useGetProductByIdQuery } from "@/data-access/api/products/products";
 import { IoMdCart } from "react-icons/io";
 import { Skeleton } from "@mui/material";
 import { Parser } from "html-to-react";
@@ -77,6 +77,16 @@ function SamplePrevArrow(props) {
 export const ProductById = ({ id }: { id: string }) => {
   const { data, isLoading } = useGetProductByIdQuery({ id: id });
 
+
+  const { data: dollarPrice } = useGetDollarQuery({});
+  const [dollar, setDollar] = useState(0);
+
+  useEffect(() => {
+    if (dollarPrice?.data?.dollar_price_by_pk) {
+      setDollar(dollarPrice?.data?.dollar_price_by_pk?.dollar_price ?? 0);
+    }
+  }, [dollarPrice]);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -134,7 +144,7 @@ export const ProductById = ({ id }: { id: string }) => {
                     </div>
                     <p className="text-[16px] text-[#191919] font-[400]">
                       <span className="font-[700]"> Price : </span>
-                      {productItem.price}S.P
+                      {Number(productItem.price) * dollar}S.P
                     </p>
                     <p className="text-[16px] text-[#191919] font-[400]">
                       <span className="font-[700]"> Discount : </span>

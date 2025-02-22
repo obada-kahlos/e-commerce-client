@@ -12,6 +12,7 @@ const CardProduct = ({
   image,
   title,
   price,
+  dollarPrice,
   description,
   // description,
   icons,
@@ -24,12 +25,16 @@ const CardProduct = ({
   title: string;
   image: string;
   price: string;
+  dollarPrice: number;
   // description?: string;
   description?: string;
   icons?: boolean;
   id?: string;
   age?: string;
 }) => {
+
+
+
   return (
     <>
       <a href={`/products/${id}`}>
@@ -45,7 +50,7 @@ const CardProduct = ({
           </div>
           <div className="px-6 py-4 border-t border-[#cccccc] flex items-center justify-center flex-col">
             <div className="font-bold text-xl mb-2">{title}</div>
-            <p className="font-bold text-xl mb">{price}S.P</p>
+            <p className="font-bold text-xl mb">{Number(price) * dollarPrice}S.P</p>
             {/* <div className="react-quill">
             {Parser().parse(unescape(description?.slice(0, 40)))}
           </div> */}

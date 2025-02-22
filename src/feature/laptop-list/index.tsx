@@ -24,7 +24,9 @@ interface ProductList {
 export const LaptopList = ({
   isLoading,
   selectedList,
+  dollarPrice,
 }: {
+  dollarPrice: number;
   isLoading: boolean;
   selectedList: ProductList[];
 }) => {
@@ -92,6 +94,7 @@ export const LaptopList = ({
                     description={
                       laptopItem.description ? laptopItem.description : ""
                     }
+                    dollarPrice={dollarPrice}
                     icons={true}
                     id={laptopItem.id ? laptopItem.id : ""}
                     age={laptopItem.age ? laptopItem.age : ""}
