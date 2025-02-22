@@ -24,10 +24,10 @@ interface ProductList {
   type?: string;
 }
 
-function calculateDiscountedPrice(price: number, discount: number) {
+function calculateDiscountedPrice(price: number, discount: number, dollar: number) {
   let discountAmount = (price * discount) / 100;
   let discountedPrice = price - discountAmount;
-  return discountedPrice;
+  return discountedPrice * dollar;
 }
 
 function SampleNextArrow(props) {
@@ -156,7 +156,8 @@ export const ProductById = ({ id }: { id: string }) => {
                         Number(productItem?.price?.replace(/\./g, "")),
                         productItem.discount === ""
                           ? Number(productItem?.discount?.replace(/\./g, ""))
-                          : 0
+                          : 0,
+                        dollar
                       )}
                       S.P
                     </p>

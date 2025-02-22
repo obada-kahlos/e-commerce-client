@@ -89,6 +89,7 @@ export const AccessoryList = ({
                     description={
                       laptopItem.description ? laptopItem.description : ""
                     }
+                    dollarPrice={0}
                     icons={true}
                     id={laptopItem.id ? laptopItem.id : ""}
                     age={laptopItem.age ? laptopItem.age : ""}
