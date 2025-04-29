@@ -34,6 +34,7 @@ const Navbar = () => {
           </h4>
           <img src="/logo.png" alt="icon" width={"60px"} />
         </Link>
+        
         {/* <ul className="flex gap-x-2">
           {navLinks.map((link) => {
             const isActive = pathname?.startsWith(link.href);

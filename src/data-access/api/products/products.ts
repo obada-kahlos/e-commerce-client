@@ -32,8 +32,8 @@ const extendedApi = apiSlice.injectEndpoints({
         method: "POST",
         body: {
           query: `
-                    query MyQuery {
-                        products(where: {type: {_eq: Laptop}}) {
+                    query MyQuery{
+                        products(where: {type: {_eq: Laptop} , status : {_eq: true }}) {
                           description
                           discount
                           id
@@ -136,6 +136,8 @@ const extendedApi = apiSlice.injectEndpoints({
                           url1
                           url2
                           url3
+                          url4
+                          url5
                           price
                           type
                           name

@@ -10,7 +10,7 @@ export default function LocaleLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang={"en"} dir="rtl">
+    <html lang={"en"} translate="no" dir="rtl">
       <meta name="viewport" content="width=1024" />
       <meta name="keywords" content="SCPNET..." />
       <meta name="google-site-verification" content="sXMXcw-2VzB_JqJrK5F341-46d9Fydeh6210CvUXqY4" />

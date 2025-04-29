@@ -2,7 +2,7 @@
 
 import MultipleItems from "@/components/react-slick/react-slick";
 import React, { useEffect, useState } from "react";
-import { useGetSearchProductsListQuery } from "@/data-access/api/products/products";
+import { useGetDollarQuery, useGetSearchProductsListQuery } from "@/data-access/api/products/products";
 import { selectSearchList } from "@/data-access/slices/search-list";
 
 import { useAppSelector } from "@/store";
@@ -26,6 +26,15 @@ export const SearchList = ({ word }: { word: string }) => {
   const selectedSearchListList: ProductList[] = useAppSelector((state) =>
     selectSearchList(state)
   );
+
+  const { data: dollarData } = useGetDollarQuery({});
+  const [dollar, setDollar] = useState(0);
+
+  useEffect(() => {
+    if (dollarData?.data?.dollar_price_by_pk) {
+      setDollar(dollarData?.data?.dollar_price_by_pk?.dollar_price ?? 0);
+    }
+  }, [data]);
 
   return (
     <>
@@ -92,7 +101,7 @@ export const SearchList = ({ word }: { word: string }) => {
                         description={
                           laptopItem.description ? laptopItem.description : ""
                         }
-                        dollarPrice={0}
+                        dollarPrice={dollar}
                         icons={true}
                         id={laptopItem.id ? laptopItem.id : ""}
                         age={laptopItem.age ? laptopItem.age : ""}
