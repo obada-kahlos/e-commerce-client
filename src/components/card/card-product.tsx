@@ -39,7 +39,7 @@ const CardProduct = ({
     <>
       <a href={`/products/${id}`}>
         <div className="card-product max-w-sm rounded overflow-hidden shadow-lg">
-          <div className="h-[300px] flex items-center justify-center">
+          <div className="h-[300px] flex items-center justify-center overflow-hidden">
             <img className="w-[100%]" alt={title} src={getImage(image, 3072)} />
             {/* <Image
               alt={title}
@@ -50,8 +50,13 @@ const CardProduct = ({
           </div>
           <div className="px-6 py-4 border-t border-[#cccccc] flex items-center justify-center flex-col">
             <div className="font-bold text-xl mb-2">{title}</div>
-            <p className="font-bold text-xl mb">{Number(price) * dollarPrice}S.P</p>
-            <p className="font-bold text-xl mb">{dollarPrice}$</p>
+            {
+              price ? <>
+                <p className="font-bold text-xl mb">{Number(price) * dollarPrice}S.P</p>
+                <p className="font-bold text-xl mb">{price}$</p>
+              </> : null
+            }
+
             {/* <div className="react-quill">
             {Parser().parse(unescape(description?.slice(0, 40)))}
           </div> */}
