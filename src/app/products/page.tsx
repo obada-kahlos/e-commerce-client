@@ -17,7 +17,7 @@ export const metadata = {
 export default function Products() {
   return (
     <div className="container mx-auto">
-      <AllProductPage />
+      <AllProductPage productType="Laptop" />
     </div>
   );
 }

@@ -12,18 +12,7 @@ import "./styles.css";
 const Navbar = () => {
   const pathname = usePathname();
 
-  // const [darkMode, setDarkMode] = useState(localStorage?.theme === "dark");
-  // useEffect(() => {
-  //   if (darkMode) {
-  //     document.documentElement.classList.add("dark");
-  //     localStorage.theme = "dark";
-  //   } else {
-  //     document.documentElement.classList.remove("dark");
-  //     localStorage.theme = "light";
-  //   }
-  // }, [darkMode]);
 
-  // const { t, i18n } = useTranslation("common");
   const navLinks = [{ name: "لابتوبات", href: `/` }, { name: "موبايلات", href: `/mobiles` }, { name: "اكسسوارات", href: `/accessories` }];
 
   return (
