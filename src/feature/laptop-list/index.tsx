@@ -2,7 +2,6 @@
 
 import MultipleItems from "@/components/react-slick/react-slick";
 import React, { useEffect, useState } from "react";
-import { useGetLaptopListQuery } from "@/data-access/api/products/products";
 import { selectLaptopListList } from "@/data-access/slices/product-list";
 import { useAppSelector } from "@/store";
 import Image from "next/image";
