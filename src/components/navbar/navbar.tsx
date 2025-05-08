@@ -40,7 +40,7 @@ const Navbar = () => {
             href={'/'}
             className={`${router.pathname == "/" ? "active-link" : "link"}`}
           >
-            <li className="text-[#000] text-[1rem] font-[400]">
+            <li className="text-[1rem] font-[400]">
               لابتوبات
             </li>
           </Link>
