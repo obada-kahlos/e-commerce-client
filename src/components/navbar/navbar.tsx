@@ -27,7 +27,7 @@ const Navbar = () => {
                 key={link.name}
                 className={`${isActive ? "active-link" : "link"}`}
               >
-                <li className="text-[#fff] text-[1rem] font-[400]">
+                <li className="text-[#000] text-[1rem] font-[400]">
                   {link.name}
                 </li>
               </Link>
