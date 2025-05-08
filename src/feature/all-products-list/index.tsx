@@ -6,7 +6,7 @@ import {
   useGetAllProductsListQuery,
   useGetAllProductsTypesListQuery,
   useGetDollarQuery,
-  useGetLaptopListQuery,
+  useGetProductsListQuery,
 } from "@/data-access/api/products/products";
 
 import {
@@ -52,13 +52,13 @@ const sortProductsByPrice = (
   });
 };
 
-export const AllProductPage = () => {
+export const AllProductPage = ({ productType }: { productType: string }) => {
   const [type, setType] = useState("Laptop");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
 
   const dispatch = useAppDispatch();
 
-  const { isLoading: isLoadingLaptop } = useGetLaptopListQuery({});
+  const { isLoading: isLoadingLaptop } = useGetProductsListQuery({ type: productType });
 
   const { data } = useGetDollarQuery({});
   const [dollar, setDollar] = useState(0);

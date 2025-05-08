@@ -24,31 +24,34 @@ const Navbar = () => {
   // }, [darkMode]);
 
   // const { t, i18n } = useTranslation("common");
+  const navLinks = [{ name: "لابتوبات", href: `/` }, { name: "موبايلات", href: `/mobiles` }, { name: "اكسسوارات", href: `/accessories` }];
 
   return (
     <nav className="sticky top-0 left-0 w-full h-[70px] bg-white overflow-hidden shadow-md z-50">
-      <div className="container mx-auto flex justify-end items-center h-[70px]">
+      <div className="container mx-auto flex justify-between items-center h-[70px]">
         <Link href={"/"} className="flex items-center gap-2">
           <h4 className="text-[22px] font-[700] md:text-left text-center font-sans">
             .Space Net For Laptop
           </h4>
           <img src="/logo.png" alt="icon" width={"60px"} />
         </Link>
-        
-        {/* <ul className="flex gap-x-2">
+        <ul className="flex items-center justify-center ml-[40px]">
           {navLinks.map((link) => {
             const isActive = pathname?.startsWith(link.href);
+
             return (
               <Link
                 href={link.href}
                 key={link.name}
                 className={`${isActive ? "active-link" : "link"}`}
               >
-                <li>{link.name}</li>
+                <li className="text-white text-[1rem] font-[400]">
+                  {link.name}
+                </li>
               </Link>
             );
           })}
-        </ul> */}
+        </ul>
       </div>
     </nav>
   );

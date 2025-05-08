@@ -26,14 +26,14 @@ export interface ProductType {
 
 const extendedApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    getLaptopList: builder.query({
-      query: () => ({
+    getProductsList: builder.query({
+      query: ({ type }) => ({
         url: ``,
         method: "POST",
         body: {
           query: `
                     query MyQuery{
-                        products(where: {type: {_eq: Laptop} , status : {_eq: true }}) {
+                        products(where: {type: {_eq: ${type}} , status : {_eq: true }}) {
                           description
                           discount
                           id
@@ -299,7 +299,7 @@ const extendedApi = apiSlice.injectEndpoints({
 });
 
 export const {
-  useGetLaptopListQuery,
+  useGetProductsListQuery,
   useGetAccessoryListQuery,
   useGetProductByIdQuery,
   useGetDollarQuery,

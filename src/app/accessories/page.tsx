@@ -66,11 +66,11 @@ export default function Home() {
           التصنيفات الموجودة بالموقع
         </h2>
         <span className="text-[14px] text-[#a1a1a1] font-[400] ">
-          جميع انواع الابتوبات و الملحقات الخاصة باللابتوب
+          جميع انواع الاكسسوارات
         </span>
       </div>
       <MultipleItems ProductList={products} />
-      <AllProductPage productType="Laptop" />
+      <AllProductPage productType="Accessory" />
     </div>
   );
 }
