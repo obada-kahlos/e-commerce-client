@@ -18,30 +18,30 @@ const Navbar = () => {
     <nav className="sticky top-0 left-0 w-full h-[70px] bg-white overflow-hidden shadow-md z-50">
       <div className="container mx-auto flex justify-between items-center h-[70px]">
         <ul className="flex items-center justify-center">
-          <Link
+          <a
             href={'/accessories'}
             className={`${pathname == "/accessories" ? "active-link" : "link"}`}
           >
             <li className="text-[#000] text-[1rem] font-[400]">
               اكسسوارات
             </li>
-          </Link>
-          <Link
+          </a>
+          <a
             href={'/mobiles'}
             className={`${pathname == "/mobiles" ? "active-link" : "link"}`}
           >
             <li className="text-[#000] text-[1rem] font-[400]">
               موبايلات
             </li>
-          </Link>
-          <Link
+          </a>
+          <a
             href={'/'}
             className={`${pathname == "/" ? "active-link" : "link"}`}
           >
             <li className="text-[1rem] font-[400]">
               لابتوبات
             </li>
-          </Link>
+          </a>
           {/* {navLinks.map((link) => {
             const isActive = pathname?.startsWith(link.href)
             return (
