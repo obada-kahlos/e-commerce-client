@@ -70,7 +70,7 @@ export default function Home() {
         </span>
       </div>
       <MultipleItems ProductList={products} />
-      <AllProductPage productType="Mobile" />
+      <AllProductPage productType="Mobile" title="موبايلات" />
     </div>
   );
 }

@@ -24,10 +24,12 @@ export const LaptopList = ({
   isLoading,
   selectedList,
   dollarPrice,
+  title,
 }: {
   dollarPrice: number;
   isLoading: boolean;
   selectedList: ProductList[];
+  title: string
 }) => {
 
   return (
@@ -73,7 +75,7 @@ export const LaptopList = ({
         <div className="container mx-auto my-[40px]">
           <div className="my-[10px]">
             <h2 className="md:text-[34px] text-[20px] text-[#2a2a2a] font-[7000]">
-              لابتوبات
+              {title}
             </h2>
             <span className="text-[14px] text-[#a1a1a1] font-[400] ">
               لابتوبات مكتبية - غيمينغ لابتوب

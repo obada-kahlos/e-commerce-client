@@ -70,7 +70,7 @@ export default function Home() {
         </span>
       </div>
       <MultipleItems ProductList={products} />
-      <AllProductPage productType="Laptop" />
+      <AllProductPage productType="Laptop" title="لابتوبات" />
     </div>
   );
 }

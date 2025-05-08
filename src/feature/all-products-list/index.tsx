@@ -52,7 +52,7 @@ const sortProductsByPrice = (
   });
 };
 
-export const AllProductPage = ({ productType }: { productType: string }) => {
+export const AllProductPage = ({ productType, title }: { productType: string, title: string }) => {
   const [type, setType] = useState("Laptop");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
 
@@ -103,7 +103,7 @@ export const AllProductPage = ({ productType }: { productType: string }) => {
           >
             أكسسوارات
           </button> */}
-          <button
+          {/* <button
             className={` ${type === "Laptop" ? "type-item-active" : "type-item"
               }`}
             onClick={() => {
@@ -111,8 +111,8 @@ export const AllProductPage = ({ productType }: { productType: string }) => {
             }}
             disabled={isLoadingLaptop}
           >
-            لابتوبات
-          </button>
+            {title}
+          </button> */}
         </div>
         <span
           className="cursor-pointer p-2 bg-main_color text-white rounded"
@@ -127,18 +127,13 @@ export const AllProductPage = ({ productType }: { productType: string }) => {
             : "من الاغلى الى الارخص"}
         </span>
       </div>
-      {type === "Laptop" ? (
-        <LaptopList
-          dollarPrice={dollar}
-          isLoading={isLoadingLaptop}
-          selectedList={selectedLaptopListList}
-        />
-      ) : (
-        <AccessoryList
-          isLoading={false}
-          selectedList={selectedAccessoryListList}
-        />
-      )}
+      <LaptopList
+        title={title}
+        dollarPrice={dollar}
+        isLoading={isLoadingLaptop}
+        selectedList={selectedLaptopListList}
+      />
+
       <style>
         {`
 
