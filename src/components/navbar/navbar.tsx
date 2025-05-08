@@ -19,11 +19,11 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center h-[70px]">
         <ul className="flex items-center justify-center">
           <a
-            href={'/accessories'}
-            className={`${pathname == "/accessories" ? "active-link" : "link"}`}
+            href={'/'}
+            className={`${pathname == "/" ? "active-link" : "link"}`}
           >
-            <li className="text-[#000] text-[1rem] font-[400]">
-              اكسسوارات
+            <li className="text-[1rem] font-[400]">
+              لابتوبات
             </li>
           </a>
           <a
@@ -35,11 +35,11 @@ const Navbar = () => {
             </li>
           </a>
           <a
-            href={'/'}
-            className={`${pathname == "/" ? "active-link" : "link"}`}
+            href={'/accessories'}
+            className={`${pathname == "/accessories" ? "active-link" : "link"}`}
           >
-            <li className="text-[1rem] font-[400]">
-              لابتوبات
+            <li className="text-[#000] text-[1rem] font-[400]">
+              اكسسوارات
             </li>
           </a>
           {/* {navLinks.map((link) => {
