@@ -39,7 +39,7 @@ const CardProduct = ({
     <>
       <a href={`/products/${id}`}>
         <div className="card-product max-w-sm rounded overflow-hidden shadow-lg">
-          <div className="h-[300px] flex items-center justify-center overflow-hidden">
+          <div className="h-[350px] flex items-center justify-center overflow-hidden">
             <img className="w-[100%]" alt={title} src={getImage(image, 3072)} />
             {/* <Image
               alt={title}
