@@ -13,7 +13,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
 
-  const navLinks = [{ name: "لابتوبات", href: `/` }, { name: "موبايلات", href: `/mobiles` }, { name: "اكسسوارات", href: `/accessories` }];
+  const navLinks = [{ name: "اكسسوارات", href: `/accessories` }, { name: "موبايلات", href: `/mobiles` }, { name: "لابتوبات", href: `/` }];
 
   return (
     <nav className="sticky top-0 left-0 w-full h-[70px] bg-white overflow-hidden shadow-md z-50">
