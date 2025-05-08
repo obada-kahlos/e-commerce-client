@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "./styles.css";
-import { useRouter } from "next/router";
 // import { useTranslation } from "next-i18next";
 
 // const navLinks = [{ name: "منتجات", href: "/products" }];
@@ -12,7 +11,6 @@ import { useRouter } from "next/router";
 const Navbar = () => {
   const pathname = usePathname();
 
-  const router = useRouter();
 
   const navLinks = [{ name: "اكسسوارات", href: `/accessories` }, { name: "موبايلات", href: `/mobiles` }, { name: "لابتوبات", href: `/` }];
 
@@ -22,7 +20,7 @@ const Navbar = () => {
         <ul className="flex items-center justify-center">
           <Link
             href={'/accessories'}
-            className={`${router.pathname == "/accessories" ? "active-link" : "link"}`}
+            className={`${pathname == "/accessories" ? "active-link" : "link"}`}
           >
             <li className="text-[#000] text-[1rem] font-[400]">
               اكسسوارات
@@ -30,7 +28,7 @@ const Navbar = () => {
           </Link>
           <Link
             href={'/mobiles'}
-            className={`${router.pathname == "/mobiles" ? "active-link" : "link"}`}
+            className={`${pathname == "/mobiles" ? "active-link" : "link"}`}
           >
             <li className="text-[#000] text-[1rem] font-[400]">
               موبايلات
@@ -38,7 +36,7 @@ const Navbar = () => {
           </Link>
           <Link
             href={'/'}
-            className={`${router.pathname == "/" ? "active-link" : "link"}`}
+            className={`${pathname == "/" ? "active-link" : "link"}`}
           >
             <li className="text-[1rem] font-[400]">
               لابتوبات
