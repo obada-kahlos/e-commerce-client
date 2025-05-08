@@ -9,7 +9,7 @@ a.link {
     transition: 0.4s;
   }
   a.link:hover {
-    background-color: var(--bg-hover);
+    background-color: var(--main-color);
   }
   
   a.active-link {
@@ -20,7 +20,7 @@ a.link {
     text-align: center;
     font-size: 18px;
     cursor: pointer;
-    background-color: (--bg-hover);
+    background-color: var(--main-color);
   }
   
   a.link::after {
