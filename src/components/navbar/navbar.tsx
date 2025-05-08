@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 left-0 w-full h-[70px] bg-white overflow-hidden shadow-md z-50">
-      <ul className="flex items-center justify-center ml-[40px]">
+      <ul className="flex items-center justify-center">
         {navLinks.map((link) => {
           const isActive = pathname?.startsWith(link.href)
           return (
