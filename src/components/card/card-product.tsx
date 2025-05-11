@@ -49,7 +49,7 @@ const CardProduct = ({
             /> */}
           </div>
           <div className="px-6 py-4 border-t border-[#cccccc] flex items-center justify-center flex-col">
-            <div className="font-bold text-xl mb-2">{title}</div>
+            <p className="font-bold text-[1.3rem] mb-2">{title}</p>
             {
               price ? <>
                 <p className="font-bold text-xl mb">{Number(price) * dollarPrice}S.P</p>
